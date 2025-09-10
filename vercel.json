@@ -4,13 +4,13 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.).*)$",
       "destination": "/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/attached_assets/(.*)",
+      "source": "/(.*\\.(pdf|jpg|jpeg|png|gif|svg|ico))",
       "headers": [
         {
           "key": "Cache-Control",

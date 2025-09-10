@@ -90,7 +90,7 @@ export default function Navigation() {
               asChild
             >
               <a 
-                href="/attached_assets/Aashir_Noman_Resume.pdf" 
+                href="./Aashir_Noman_Resume.pdf" 
                 download="Aashir_Noman_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
