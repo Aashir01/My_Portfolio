@@ -37,13 +37,13 @@ export default function HeroSection() {
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Hi, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Alex Chen</span>
-              <div className="text-3xl sm:text-4xl lg:text-5xl mt-2">AI Engineer</div>
+              Hi, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Aashir Noman</span>
+              <div className="text-3xl sm:text-4xl lg:text-5xl mt-2">Data Scientist</div>
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl" data-testid="text-hero-description">
-              With 4+ years of experience in AI, I design, develop, and deploy cutting-edge software and AI solutions, 
-              specializing in computer vision, NLP, and deep learning frameworks.
+              With 2+ years of experience as a top-rated freelance Data Scientist, I deliver high-quality machine learning solutions, 
+              AI/ML projects, and data aggregation, consistently earning 5-star ratings from clients.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
@@ -66,16 +66,16 @@ export default function HeroSection() {
             
             <div className="flex items-center justify-center lg:justify-start space-x-6">
               <div className="text-center" data-testid="stat-experience">
-                <div className="text-2xl font-bold text-primary">4+</div>
+                <div className="text-2xl font-bold text-primary">2+</div>
                 <div className="text-sm text-muted-foreground">Years XP</div>
               </div>
               <div className="text-center" data-testid="stat-projects">
-                <div className="text-2xl font-bold text-primary">23+</div>
+                <div className="text-2xl font-bold text-primary">15+</div>
                 <div className="text-sm text-muted-foreground">Projects</div>
               </div>
-              <div className="text-center" data-testid="stat-publications">
-                <div className="text-2xl font-bold text-primary">8+</div>
-                <div className="text-sm text-muted-foreground">Publications</div>
+              <div className="text-center" data-testid="stat-clients">
+                <div className="text-2xl font-bold text-primary">5⭐</div>
+                <div className="text-sm text-muted-foreground">Rating</div>
               </div>
             </div>
           </div>
