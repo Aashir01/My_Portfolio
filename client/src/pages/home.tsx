@@ -3,7 +3,6 @@ import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
 import SkillsSection from "@/components/skills-section";
 import ProjectsSection from "@/components/projects-section";
-import PublicationsSection from "@/components/publications-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -36,7 +35,6 @@ export default function Home() {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
-      <PublicationsSection />
       <ContactSection />
       <Footer />
       

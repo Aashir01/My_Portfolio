@@ -30,7 +30,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              AI Engineer
+              Data Scientist
             </div>
           </div>
           
@@ -63,13 +63,6 @@ export default function Navigation() {
                 data-testid="nav-projects"
               >
                 Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection('publications')}
-                className="text-foreground hover:text-primary transition-colors"
-                data-testid="nav-research"
-              >
-                Research
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
