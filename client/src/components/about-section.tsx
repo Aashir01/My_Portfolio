@@ -5,7 +5,8 @@ export default function AboutSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My journey as a freelance Data Scientist spans across various AI/ML domains, consistently delivering high-quality solutions.
+            A distinguished Data Scientist with extensive experience across multiple AI/ML domains, specializing in 
+            innovative solutions that drive business value and operational excellence.
           </p>
         </div>
         
@@ -13,18 +14,20 @@ export default function AboutSection() {
           <div className="space-y-6">
             <div className="space-y-4" data-testid="about-description">
               <p className="text-lg leading-relaxed">
-                With 2+ years of experience as a top-rated freelance Data Scientist on Upwork, I design, develop, and deploy 
-                cutting-edge AI/ML solutions. I've consistently earned 5-star ratings and commendations from clients across 
-                various industries, specializing in chatbot development, AI agents, and data processing.
+                With 3+ years of distinguished experience as a top-rated freelance Data Scientist, I architect, develop, and deploy 
+                enterprise-grade AI/ML solutions that deliver measurable business impact. Recognized for exceptional client satisfaction 
+                and consistently maintaining 5-star ratings across diverse industry verticals, specializing in intelligent automation, 
+                conversational AI, and advanced data processing systems.
               </p>
               <p className="text-lg leading-relaxed">
-                Skilled in Python, SQL, and modern deep learning frameworks like TensorFlow and PyTorch, I build 
-                scalable AI solutions. My expertise spans machine learning, data science, web scraping, and AI agent 
-                frameworks like CrewAI for business automation.
+                Proficient in Python, SQL, and cutting-edge deep learning frameworks including TensorFlow and PyTorch, I engineer 
+                scalable, production-ready AI solutions. My comprehensive expertise encompasses machine learning, data science, 
+                intelligent web scraping, and sophisticated AI agent frameworks such as CrewAI for enterprise automation workflows.
               </p>
               <p className="text-lg leading-relaxed">
-                I'm passionate about leveraging AI to solve real-world problems, from speech recognition systems to 
-                AI-driven PDF processing and custom algorithms for data optimization.
+                Passionate about transforming complex data challenges into innovative solutions, I specialize in developing 
+                advanced speech recognition systems, AI-powered document processing pipelines, and custom optimization algorithms 
+                that drive operational efficiency and business growth.
               </p>
             </div>
             
@@ -50,7 +53,7 @@ export default function AboutSection() {
           
           <div className="space-y-6">
             <img 
-              src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
               alt="Modern AI development workspace with multiple monitors showing code and data visualizations" 
               className="rounded-xl shadow-2xl w-full object-cover"
               data-testid="img-workspace"

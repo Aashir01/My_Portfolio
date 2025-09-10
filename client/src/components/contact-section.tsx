@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, MapPin, Coffee, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Coffee, Github, Linkedin, Download, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -38,7 +38,8 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Let's Connect</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm always interested in new opportunities and collaborations. Let's discuss how we can work together.
+            I welcome opportunities to collaborate on innovative projects and strategic initiatives. 
+            Let's explore how we can work together to achieve your business objectives.
           </p>
         </div>
 
@@ -72,7 +73,25 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Coffee Chat</h3>
-                  <p className="text-muted-foreground">Available for consultations - WhatsApp: +923401807019</p>
+                  <p className="text-muted-foreground">Available for strategic consultations and project discussions - WhatsApp: +9234018077019</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-4" data-testid="contact-cv">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center border border-primary/20">
+                  <Download className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Resume</h3>
+                  <a 
+                    href="/attached_assets/Aashir_Noman_Resume.pdf" 
+                    download="Aashir_Noman_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-primary/80 transition-colors"
+                  >
+                    Download my CV
+                  </a>
                 </div>
               </div>
             </div>
@@ -91,25 +110,31 @@ export default function ContactSection() {
                   <span className="text-sm font-bold">U</span>
                 </a>
                 <a 
-                  href="#" 
+                  href="https://linkedin.com/in/aashir-noman-138820152" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                   data-testid="social-linkedin"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://github.com/Aashir01" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                   data-testid="social-github"
                 >
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://wa.me/9234018077019" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                  data-testid="social-twitter"
+                  data-testid="social-whatsapp"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <MessageCircle className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -117,7 +142,7 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <div className="bg-card border border-border rounded-xl p-8">
-            <h3 className="text-2xl font-semibold mb-6">Send me a message</h3>
+            <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
             <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -168,7 +193,7 @@ export default function ContactSection() {
                   id="message"
                   name="message"
                   rows={5}
-                  placeholder="Tell me about your project or opportunity..."
+                  placeholder="Describe your project requirements or business objectives..."
                   value={formData.message}
                   onChange={handleInputChange}
                   required

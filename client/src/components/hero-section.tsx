@@ -42,8 +42,9 @@ export default function HeroSection() {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl" data-testid="text-hero-description">
-              With 2+ years of experience as a top-rated freelance Data Scientist, I deliver high-quality machine learning solutions, 
-              AI/ML projects, and data aggregation, consistently earning 5-star ratings from clients.
+              A seasoned Data Scientist with 3+ years of expertise in delivering cutting-edge machine learning solutions, 
+              AI/ML implementations, and advanced data analytics. Recognized for exceptional client satisfaction and 
+              consistently maintaining top-tier performance ratings across diverse industry projects.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
@@ -66,7 +67,7 @@ export default function HeroSection() {
             
             <div className="flex items-center justify-center lg:justify-start space-x-6">
               <div className="text-center" data-testid="stat-experience">
-                <div className="text-2xl font-bold text-primary">2+</div>
+                <div className="text-2xl font-bold text-primary">3+</div>
                 <div className="text-sm text-muted-foreground">Years XP</div>
               </div>
               <div className="text-center" data-testid="stat-projects">
@@ -83,7 +84,7 @@ export default function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative animate-float">
               <img 
-                src="/attached_assets/EID_1757478401085.jpg" 
+                src="/attached_assets/profile_pic.jpg" 
                 alt="Aashir Noman - Professional Data Scientist headshot" 
                 className="w-72 h-72 sm:w-80 sm:h-80 rounded-full object-cover shadow-2xl border-4 border-primary/20"
                 data-testid="img-headshot"

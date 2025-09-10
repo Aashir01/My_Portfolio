@@ -1,6 +1,6 @@
 # Aashir Noman - Data Scientist Portfolio
 
-A modern, responsive portfolio website showcasing the professional experience, skills, and projects of Aashir Noman, a top-rated freelance Data Scientist with 2+ years of experience delivering high-quality AI/ML solutions.
+A modern, responsive portfolio website showcasing the professional experience, skills, and projects of Aashir Noman, a top-rated freelance Data Scientist with 3+ years of experience delivering high-quality AI/ML solutions.
 
 ## 🚀 Features
 
@@ -83,7 +83,7 @@ npm run dev
 
 ### Hero Section
 - Professional introduction
-- Key statistics (2+ years experience, 5⭐ rating)
+- Key statistics (3+ years experience, 5⭐ rating)
 - Call-to-action buttons
 
 ### About Section
@@ -114,7 +114,7 @@ npm run dev
 
 ## 💼 Professional Background
 
-Aashir Noman is a highly skilled and top-rated Data Scientist with over 2 years of experience delivering high-quality machine learning solutions, data aggregation, and AI/ML projects. Recognized for a strong track record of successful projects, consistently earning 5-star ratings and commendations from clients.
+Aashir Noman is a highly skilled and top-rated Data Scientist with over 3 years of experience delivering high-quality machine learning solutions, data aggregation, and AI/ML projects. Recognized for a strong track record of successful projects, consistently earning 5-star ratings and commendations from clients.
 
 ### Key Expertise
 - Machine Learning (KNN, CNN, Time Series Clustering)

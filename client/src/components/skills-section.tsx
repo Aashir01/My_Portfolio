@@ -98,7 +98,8 @@ export default function SkillsSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Technical Skills</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My expertise spans across machine learning, data science, and AI implementation with proven client success.
+            Comprehensive expertise in machine learning, data science, and AI implementation, demonstrated through 
+            successful project delivery and exceptional client outcomes across diverse industry sectors.
           </p>
         </div>
         

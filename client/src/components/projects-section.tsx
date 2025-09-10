@@ -8,7 +8,7 @@ const projects = [
   {
     id: 1,
     title: "AI Chatbot Development using LLMs",
-    description: "Built intelligent AI chatbots for customer service and automation, leveraging OpenAI and LangChain for natural conversation flows and automated responses.",
+    description: "Architected and deployed enterprise-grade AI chatbot solutions for customer service automation, utilizing OpenAI's advanced language models and LangChain framework to deliver natural, context-aware conversational experiences with seamless integration capabilities.",
     image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     tags: ["OpenAI", "LangChain", "LLM", "Customer Service"],
     categories: ["AI Chatbots"],
@@ -20,7 +20,7 @@ const projects = [
   {
     id: 2,
     title: "AI Agents using CrewAI",
-    description: "Implemented AI-driven agents for automation in various business workflows, streamlining processes and increasing operational efficiency across multiple industries.",
+    description: "Engineered sophisticated AI agent systems using CrewAI framework for enterprise workflow automation, delivering intelligent process optimization and significant operational efficiency improvements across diverse industry sectors.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     tags: ["CrewAI", "Automation", "Workflow", "Business Intelligence"],
     categories: ["AI Agents"],
@@ -32,7 +32,7 @@ const projects = [
   {
     id: 3,
     title: "AI Speech Recognition App",
-    description: "Designed an advanced AI-based speech recognition tool capable of understanding specific industry jargon and technical terminology with high accuracy.",
+    description: "Developed a state-of-the-art AI-powered speech recognition system with specialized domain adaptation capabilities, achieving exceptional accuracy in processing industry-specific terminology and technical jargon across multiple professional sectors.",
     image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     tags: ["Speech Recognition", "NLP", "Industry Jargon", "AI"],
     categories: ["Machine Learning"],
@@ -44,7 +44,7 @@ const projects = [
   {
     id: 4,
     title: "AI-driven PDF Processing",
-    description: "Developed sophisticated AI models for extracting, analyzing, and processing data from PDF files, enabling automated document analysis and data extraction.",
+    description: "Architected advanced AI-driven document processing systems for intelligent PDF data extraction and analysis, implementing cutting-edge OCR and NLP technologies to enable automated document understanding and structured data generation.",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     tags: ["PDF Processing", "Data Extraction", "Document AI", "OCR"],
     categories: ["Data Processing"],
@@ -56,8 +56,8 @@ const projects = [
   {
     id: 5,
     title: "Custom JPEG Compression Algorithm",
-    description: "Created an optimized custom JPEG compression algorithm for enhanced image storage efficiency, reducing file sizes while maintaining image quality.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    description: "Engineered proprietary JPEG compression algorithms with advanced optimization techniques, achieving superior compression ratios while preserving image fidelity, resulting in significant storage efficiency improvements and enhanced performance metrics.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     tags: ["Image Processing", "Compression", "Algorithm", "Optimization"],
     categories: ["Machine Learning", "Data Processing"],
     github: "#",
@@ -80,7 +80,8 @@ export default function ProjectsSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore my latest AI and machine learning projects across various domains.
+            Discover innovative AI and machine learning solutions that demonstrate technical excellence and 
+            deliver tangible business value across multiple industry verticals.
           </p>
         </div>
 

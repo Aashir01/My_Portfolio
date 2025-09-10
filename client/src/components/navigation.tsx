@@ -84,8 +84,19 @@ export default function Navigation() {
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-            <Button className="hidden sm:inline-flex" data-testid="button-download-cv">
-              Download CV <Download className="ml-2 h-4 w-4" />
+            <Button 
+              className="hidden sm:inline-flex" 
+              data-testid="button-download-cv"
+              asChild
+            >
+              <a 
+                href="/attached_assets/Aashir_Noman_Resume.pdf" 
+                download="Aashir_Noman_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV <Download className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
         </div>
