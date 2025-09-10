@@ -83,8 +83,8 @@ export default function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative animate-float">
               <img 
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400" 
-                alt="Professional AI Engineer headshot" 
+                src="@assets/EID_1757478401085.jpg" 
+                alt="Aashir Noman - Professional Data Scientist headshot" 
                 className="w-72 h-72 sm:w-80 sm:h-80 rounded-full object-cover shadow-2xl border-4 border-primary/20"
                 data-testid="img-headshot"
               />
