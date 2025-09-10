@@ -5,7 +5,7 @@ export default function AboutSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My journey in AI and machine learning spans across various domains, from medical technology to autonomous systems.
+            My journey as a freelance Data Scientist spans across various AI/ML domains, consistently delivering high-quality solutions.
           </p>
         </div>
         
@@ -13,35 +13,36 @@ export default function AboutSection() {
           <div className="space-y-6">
             <div className="space-y-4" data-testid="about-description">
               <p className="text-lg leading-relaxed">
-                With 4+ years of experience in AI, I design, develop, and deploy cutting-edge software and AI solutions, 
-                specializing in MedTech and beyond. I've led cross-functional teams, translating business goals into 
-                actionable Data & AI strategies that deliver results.
+                With 2+ years of experience as a top-rated freelance Data Scientist on Upwork, I design, develop, and deploy 
+                cutting-edge AI/ML solutions. I've consistently earned 5-star ratings and commendations from clients across 
+                various industries, specializing in chatbot development, AI agents, and data processing.
               </p>
               <p className="text-lg leading-relaxed">
-                Skilled in Python, C++, Java, and deep learning frameworks, I build scalable, high-performance systems. 
-                My expertise spans computer vision, natural language processing, and signal processing applications.
+                Skilled in Python, SQL, and modern deep learning frameworks like TensorFlow and PyTorch, I build 
+                scalable AI solutions. My expertise spans machine learning, data science, web scraping, and AI agent 
+                frameworks like CrewAI for business automation.
               </p>
               <p className="text-lg leading-relaxed">
-                I'm passionate about leveraging AI to solve real-world problems, with published research in medical imaging 
-                and contributions to open-source AI frameworks.
+                I'm passionate about leveraging AI to solve real-world problems, from speech recognition systems to 
+                AI-driven PDF processing and custom algorithms for data optimization.
               </p>
             </div>
             
             <div className="grid grid-cols-2 gap-6 pt-6">
-              <div className="text-center p-4 rounded-lg bg-card border border-border" data-testid="stat-computer-vision">
+              <div className="text-center p-4 rounded-lg bg-card border border-border" data-testid="stat-machine-learning">
                 <div className="text-2xl font-bold text-primary mb-1">95%</div>
-                <div className="text-sm text-muted-foreground">Computer Vision</div>
+                <div className="text-sm text-muted-foreground">Machine Learning</div>
               </div>
-              <div className="text-center p-4 rounded-lg bg-card border border-border" data-testid="stat-deep-learning">
+              <div className="text-center p-4 rounded-lg bg-card border border-border" data-testid="stat-data-science">
+                <div className="text-2xl font-bold text-primary mb-1">92%</div>
+                <div className="text-sm text-muted-foreground">Data Science</div>
+              </div>
+              <div className="text-center p-4 rounded-lg bg-card border border-border" data-testid="stat-chatbots">
                 <div className="text-2xl font-bold text-primary mb-1">90%</div>
-                <div className="text-sm text-muted-foreground">Deep Learning</div>
-              </div>
-              <div className="text-center p-4 rounded-lg bg-card border border-border" data-testid="stat-nlp">
-                <div className="text-2xl font-bold text-primary mb-1">85%</div>
-                <div className="text-sm text-muted-foreground">NLP</div>
+                <div className="text-sm text-muted-foreground">AI Chatbots</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-card border border-border" data-testid="stat-python">
-                <div className="text-2xl font-bold text-primary mb-1">92%</div>
+                <div className="text-2xl font-bold text-primary mb-1">95%</div>
                 <div className="text-sm text-muted-foreground">Python</div>
               </div>
             </div>
@@ -56,16 +57,16 @@ export default function AboutSection() {
             />
             <div className="grid grid-cols-3 gap-4 mt-6">
               <div className="text-center p-4 rounded-lg bg-primary/10 border border-primary/20">
-                <i className="fas fa-brain text-2xl text-primary mb-2"></i>
-                <div className="text-sm font-medium">AI Research</div>
+                <i className="fas fa-robot text-2xl text-primary mb-2"></i>
+                <div className="text-sm font-medium">AI Agents</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-primary/10 border border-primary/20">
-                <i className="fas fa-code text-2xl text-primary mb-2"></i>
-                <div className="text-sm font-medium">Full Stack</div>
+                <i className="fas fa-comments text-2xl text-primary mb-2"></i>
+                <div className="text-sm font-medium">Chatbots</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-primary/10 border border-primary/20">
-                <i className="fas fa-cloud text-2xl text-primary mb-2"></i>
-                <div className="text-sm font-medium">Cloud MLOps</div>
+                <i className="fas fa-chart-bar text-2xl text-primary mb-2"></i>
+                <div className="text-sm font-medium">Data Analytics</div>
               </div>
             </div>
           </div>
