@@ -1,46 +1,46 @@
 import { useEffect, useRef, useState } from "react";
 
 const skillsData = {
-  "Data Science & AI": {
+  "Machine Learning": {
     icon: "🤖",
     skills: [
-      { name: "Computer Vision", percentage: 95 },
-      { name: "Natural Language Processing", percentage: 90 },
-      { name: "Deep Learning", percentage: 92 },
-      { name: "Signal Processing", percentage: 85 }
+      { name: "CNN & Deep Learning", percentage: 92 },
+      { name: "KNN & Clustering", percentage: 88 },
+      { name: "Supervised Learning", percentage: 95 },
+      { name: "Unsupervised Learning", percentage: 85 }
     ]
   },
   "Programming": {
     icon: "💻", 
     skills: [
       { name: "Python", percentage: 95 },
-      { name: "C++/C", percentage: 88 },
-      { name: "Java", percentage: 85 },
-      { name: "JavaScript/TypeScript", percentage: 80 }
+      { name: "SQL", percentage: 88 },
+      { name: "Data Structures", percentage: 85 },
+      { name: "Algorithm Design", percentage: 82 }
     ]
   },
-  "Cloud & DevOps": {
-    icon: "☁️",
+  "AI Implementation": {
+    icon: "🚀",
     skills: [
-      { name: "AWS", percentage: 85 },
-      { name: "Google Cloud Platform", percentage: 82 },
-      { name: "Docker & Kubernetes", percentage: 78 },
-      { name: "MLOps & CI/CD", percentage: 80 }
+      { name: "AI Chatbot Development", percentage: 92 },
+      { name: "LLM Integration", percentage: 88 },
+      { name: "AI Agents (CrewAI)", percentage: 85 },
+      { name: "Model Fine-Tuning", percentage: 80 }
     ]
   }
 };
 
 const frameworks = [
-  "PyTorch", "TensorFlow", "HuggingFace", "OpenCV", 
-  "Scikit-learn", "FastAPI", "React", "Node.js"
+  "PyTorch", "TensorFlow", "Scikit-learn", "CrewAI", 
+  "Pandas", "NumPy", "Matplotlib", "LangChain"
 ];
 
 const databases = [
-  "PostgreSQL", "MongoDB", "Redis", "Vector DBs"
+  "Database Management", "Data Aggregation", "Data Cleaning", "EDA"
 ];
 
 const tools = [
-  "Git & GitHub", "Jupyter & Colab", "VS Code", "Linux"
+  "Data Visualization", "Web Scraping", "Data Analysis", "OpenAI APIs"
 ];
 
 function SkillProgress({ skill, isVisible }: { skill: { name: string; percentage: number }, isVisible: boolean }) {
@@ -98,7 +98,7 @@ export default function SkillsSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Technical Skills</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My expertise spans across multiple domains of AI and software engineering.
+            My expertise spans across machine learning, data science, and AI implementation with proven client success.
           </p>
         </div>
         
@@ -143,27 +143,27 @@ export default function SkillsSection() {
             </div>
           </div>
 
-          {/* Databases */}
-          <div className="p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow" data-testid="skill-category-databases">
+          {/* Data Science */}
+          <div className="p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow" data-testid="skill-category-data-science">
             <div className="flex items-center mb-4">
-              <span className="text-2xl mr-3">🗄️</span>
-              <h3 className="text-xl font-semibold">Databases</h3>
+              <span className="text-2xl mr-3">📊</span>
+              <h3 className="text-xl font-semibold">Data Science</h3>
             </div>
             <div className="space-y-3">
-              {databases.map((db) => (
-                <div key={db} className="flex items-center">
+              {databases.map((skill) => (
+                <div key={skill} className="flex items-center">
                   <span className="w-4 h-4 bg-primary rounded-full mr-3"></span>
-                  <span>{db}</span>
+                  <span>{skill}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Tools */}
-          <div className="p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow" data-testid="skill-category-tools">
+          {/* Specializations */}
+          <div className="p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow" data-testid="skill-category-specializations">
             <div className="flex items-center mb-4">
-              <span className="text-2xl mr-3">🛠️</span>
-              <h3 className="text-xl font-semibold">Tools</h3>
+              <span className="text-2xl mr-3">⚡</span>
+              <h3 className="text-xl font-semibold">Specializations</h3>
             </div>
             <div className="space-y-3">
               {tools.map((tool) => (
