@@ -2,80 +2,68 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Star, Trophy, Award } from "lucide-react";
 
-const filters = ["All", "Computer Vision", "NLP", "Deep Learning", "Web Apps"];
+const filters = ["All", "AI Chatbots", "AI Agents", "Data Processing", "Machine Learning"];
 
 const projects = [
   {
     id: 1,
-    title: "Neural Black - AI Brain Tumor Detection",
-    description: "Complete brain tumor detection & classification system using CNNs with 99.5% accuracy for classifying Glioma, Meningioma, & Pituitary tumors from MR Images.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    tags: ["Computer Vision", "CNN", "Medical AI", "PyTorch"],
-    categories: ["Computer Vision", "Deep Learning"],
-    github: "https://github.com/aksh-ai/neuralBlack",
+    title: "AI Chatbot Development using LLMs",
+    description: "Built intelligent AI chatbots for customer service and automation, leveraging OpenAI and LangChain for natural conversation flows and automated responses.",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    tags: ["OpenAI", "LangChain", "LLM", "Customer Service"],
+    categories: ["AI Chatbots"],
+    github: "#",
     demo: "#",
-    stars: 136,
-    achievement: "stars"
+    achievement: "5⭐ Client Rating",
+    achievementType: "rating"
   },
   {
     id: 2,
-    title: "Drive AI - Smart Warning System",
-    description: "Computer Vision & Deep Learning system for detecting traffic signs, driver drowsiness, lane changes, and pedestrian movements with real-time warnings.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    tags: ["Computer Vision", "Object Detection", "Real-time", "OpenCV"],
-    categories: ["Computer Vision", "Deep Learning"],
-    github: "https://github.com/aksh-ai/drive-ai",
+    title: "AI Agents using CrewAI",
+    description: "Implemented AI-driven agents for automation in various business workflows, streamlining processes and increasing operational efficiency across multiple industries.",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    tags: ["CrewAI", "Automation", "Workflow", "Business Intelligence"],
+    categories: ["AI Agents"],
+    github: "#",
     demo: "#",
-    stars: 42,
-    achievement: "stars"
+    achievement: "Business Automation",
+    achievementType: "business"
   },
   {
     id: 3,
-    title: "Text Readability Prediction with Transformers",
-    description: "Comprehensive PyTorch/HuggingFace pipeline using BERT and RoBERTa for text complexity estimation. Includes interactive web app for custom text analysis.",
-    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    tags: ["NLP", "BERT", "Transformers", "Web App"],
-    categories: ["NLP", "Web Apps"],
-    github: "https://github.com/kozodoi/Text_Readability_Prediction",
+    title: "AI Speech Recognition App",
+    description: "Designed an advanced AI-based speech recognition tool capable of understanding specific industry jargon and technical terminology with high accuracy.",
+    image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    tags: ["Speech Recognition", "NLP", "Industry Jargon", "AI"],
+    categories: ["Machine Learning"],
+    github: "#",
     demo: "#",
-    achievement: "Top 9% Kaggle",
-    achievementType: "competition"
+    achievement: "High Accuracy",
+    achievementType: "technical"
   },
   {
     id: 4,
-    title: "Chemical Structure Image-to-Text Translation",
-    description: "CNN-LSTM encoder-decoder architecture for translating chemical images into formula strings. Achieved top-5% placement in Kaggle competition with silver medal.",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    tags: ["Computer Vision", "CNN-LSTM", "Chemistry", "PyTorch"],
-    categories: ["Computer Vision", "Deep Learning"],
-    github: "https://github.com/kozodoi/BMS_Molecular_Translation",
+    title: "AI-driven PDF Processing",
+    description: "Developed sophisticated AI models for extracting, analyzing, and processing data from PDF files, enabling automated document analysis and data extraction.",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    tags: ["PDF Processing", "Data Extraction", "Document AI", "OCR"],
+    categories: ["Data Processing"],
+    github: "#",
     demo: "#",
-    achievement: "Silver Medal",
-    achievementType: "medal"
+    achievement: "Automated Processing",
+    achievementType: "automation"
   },
   {
     id: 5,
-    title: "AI Stock Trading Bot",
-    description: "Reinforcement Learning bot using Deep Q Learning to make automated trading decisions. Simulates profit and loss based on real market data and technical indicators.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    tags: ["RL", "Deep Q Learning", "Finance", "Trading"],
-    categories: ["Deep Learning"],
-    github: "https://github.com/aksh-ai/stock_bot",
+    title: "Custom JPEG Compression Algorithm",
+    description: "Created an optimized custom JPEG compression algorithm for enhanced image storage efficiency, reducing file sizes while maintaining image quality.",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    tags: ["Image Processing", "Compression", "Algorithm", "Optimization"],
+    categories: ["Machine Learning", "Data Processing"],
+    github: "#",
     demo: "#",
-    stars: 28,
-    achievement: "stars"
-  },
-  {
-    id: 6,
-    title: "Tofu - Deep Learning Framework",
-    description: "User-friendly deep learning framework for Python, C, C++, and Java designed to simplify technical complexity and improve accessibility to machine learning.",
-    image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    tags: ["Deep Learning", "Framework", "Multi-language", "Open Source"],
-    categories: ["Deep Learning"],
-    github: "https://github.com/aksh-ai/tofu",
-    demo: "#",
-    stars: 15,
-    achievement: "stars"
+    achievement: "Optimized Storage",
+    achievementType: "performance"
   }
 ];
 
@@ -146,19 +134,29 @@ export default function ProjectsSection() {
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2 text-muted-foreground">
-                    {project.achievement === "stars" ? (
+                    {project.achievementType === "rating" ? (
                       <>
                         <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                        <span className="text-sm">{project.stars} stars</span>
-                      </>
-                    ) : project.achievementType === "competition" ? (
-                      <>
-                        <Trophy className="h-4 w-4 text-yellow-500" />
                         <span className="text-sm">{project.achievement}</span>
                       </>
-                    ) : project.achievementType === "medal" ? (
+                    ) : project.achievementType === "business" ? (
                       <>
-                        <Award className="h-4 w-4 text-gray-400" />
+                        <Trophy className="h-4 w-4 text-blue-500" />
+                        <span className="text-sm">{project.achievement}</span>
+                      </>
+                    ) : project.achievementType === "technical" ? (
+                      <>
+                        <Award className="h-4 w-4 text-green-500" />
+                        <span className="text-sm">{project.achievement}</span>
+                      </>
+                    ) : project.achievementType === "automation" ? (
+                      <>
+                        <Award className="h-4 w-4 text-purple-500" />
+                        <span className="text-sm">{project.achievement}</span>
+                      </>
+                    ) : project.achievementType === "performance" ? (
+                      <>
+                        <Award className="h-4 w-4 text-orange-500" />
                         <span className="text-sm">{project.achievement}</span>
                       </>
                     ) : null}
@@ -190,8 +188,8 @@ export default function ProjectsSection() {
 
         <div className="text-center mt-12">
           <Button variant="outline" asChild data-testid="button-view-all-projects">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              View All Projects on GitHub <Github className="ml-2 h-4 w-4" />
+            <a href="https://upwork.com/freelancers/aashir1" target="_blank" rel="noopener noreferrer">
+              View All Projects on Upwork <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
         </div>
