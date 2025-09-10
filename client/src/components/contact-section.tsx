@@ -52,7 +52,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-muted-foreground">alex.chen.ai@gmail.com</p>
+                  <p className="text-muted-foreground">azac965@gmail.com</p>
                 </div>
               </div>
               
@@ -62,7 +62,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Location</h3>
-                  <p className="text-muted-foreground">San Francisco, CA | Remote</p>
+                  <p className="text-muted-foreground">Karachi, Pakistan | Remote</p>
                 </div>
               </div>
               
@@ -72,7 +72,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Coffee Chat</h3>
-                  <p className="text-muted-foreground">Fridays @ 3PM PT - Blue Bottle Coffee</p>
+                  <p className="text-muted-foreground">Available for consultations - WhatsApp: +923401807019</p>
                 </div>
               </div>
             </div>
@@ -82,11 +82,13 @@ export default function ContactSection() {
               <h3 className="font-semibold mb-4">Follow Me</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="#" 
+                  href="https://upwork.com/freelancers/aashir1" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                  data-testid="social-github"
+                  data-testid="social-upwork"
                 >
-                  <Github className="h-5 w-5" />
+                  <span className="text-sm font-bold">U</span>
                 </a>
                 <a 
                   href="#" 
@@ -98,23 +100,16 @@ export default function ContactSection() {
                 <a 
                   href="#" 
                   className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                  data-testid="social-github"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                   data-testid="social-twitter"
                 >
                   <Twitter className="h-5 w-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                  data-testid="social-kaggle"
-                >
-                  <span className="text-sm font-bold">K</span>
-                </a>
-                <a 
-                  href="#" 
-                  className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                  data-testid="social-scholar"
-                >
-                  <span className="text-sm font-bold">🎓</span>
                 </a>
               </div>
             </div>
