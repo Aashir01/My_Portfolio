@@ -1,11 +1,22 @@
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-500/5 via-transparent to-purple-500/5" />
+      <div className="absolute top-20 right-20 w-64 h-64 bg-blue-300/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-300/10 rounded-full blur-3xl" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A distinguished Data Scientist with extensive experience across multiple AI/ML domains, specializing in 
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+            About Me
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-400 bg-clip-text text-transparent">
+            About Me
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            A distinguished AI Engineer with extensive experience across multiple AI/ML domains, specializing in 
             innovative solutions that drive business value and operational excellence.
           </p>
         </div>
@@ -14,7 +25,7 @@ export default function AboutSection() {
           <div className="space-y-6">
             <div className="space-y-4" data-testid="about-description">
               <p className="text-lg leading-relaxed">
-                With 3+ years of distinguished experience as a top-rated freelance Data Scientist, I architect, develop, and deploy 
+                With 3+ years of distinguished experience as a top-rated freelance AI Engineer, I architect, develop, and deploy 
                 enterprise-grade AI/ML solutions that deliver measurable business impact. Recognized for exceptional client satisfaction 
                 and consistently maintaining 5-star ratings across diverse industry verticals, specializing in intelligent automation, 
                 conversational AI, and advanced data processing systems.

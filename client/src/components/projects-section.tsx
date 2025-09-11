@@ -75,11 +75,22 @@ export default function ProjectsSection() {
     : projects.filter(project => project.categories.includes(activeFilter));
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-pink-900 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-500/5 via-transparent to-pink-500/5" />
+      <div className="absolute top-20 right-20 w-80 h-80 bg-purple-300/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-64 h-64 bg-pink-300/10 rounded-full blur-3xl" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+            Featured Projects
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-purple-600 dark:from-white dark:to-purple-400 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Discover innovative AI and machine learning solutions that demonstrate technical excellence and 
             deliver tangible business value across multiple industry verticals.
           </p>
@@ -105,7 +116,7 @@ export default function ProjectsSection() {
           {filteredProjects.map((project) => (
             <div 
               key={project.id}
-              className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-3"
               data-testid={`project-card-${project.id}`}
             >
               <img 
