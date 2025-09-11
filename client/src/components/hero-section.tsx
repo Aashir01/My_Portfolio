@@ -84,7 +84,7 @@ export default function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative animate-float">
               <img 
-                src="./profile_pic.jpg" 
+                src="/profile_pic.jpg" 
                 alt="Aashir Noman - Professional Data Scientist headshot" 
                 className="w-72 h-72 sm:w-80 sm:h-80 rounded-full object-cover shadow-2xl border-4 border-primary/20"
                 data-testid="img-headshot"

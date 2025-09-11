@@ -84,7 +84,7 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-semibold">Resume</h3>
                   <a 
-                    href="./Aashir_Noman_Resume.pdf" 
+                    href="/Aashir_Noman_Resume.pdf" 
                     download="Aashir_Noman_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
