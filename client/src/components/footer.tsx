@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
               AI Engineer Portfolio
             </div>
-            <p className="text-muted-foreground text-sm">© 2024 Alex Chen. All rights reserved.</p>
+            <p className="text-muted-foreground text-sm">© 2024 Aashir Noman. All rights reserved.</p>
           </div>
           
           <div className="flex items-center space-x-6">
@@ -29,25 +29,31 @@ export default function Footer() {
             </a>
             <div className="flex space-x-3">
               <a 
-                href="#" 
+                href="https://github.com/Aashir01" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 data-testid="footer-github"
               >
                 <Github className="h-4 w-4" />
               </a>
               <a 
-                href="#" 
+                href="https://linkedin.com/in/aashir-noman-138820152" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 data-testid="footer-linkedin"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <a 
-                href="#" 
+                href="https://wa.me/923401807019" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                data-testid="footer-twitter"
+                data-testid="footer-whatsapp"
               >
-                <Twitter className="h-4 w-4" />
+                <MessageCircle className="h-4 w-4" />
               </a>
             </div>
           </div>
