@@ -73,7 +73,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Coffee Chat</h3>
-                  <p className="text-muted-foreground">Available for strategic consultations and project discussions - WhatsApp: +9234018077019</p>
+                  <p className="text-muted-foreground">Available for strategic consultations and project discussions - WhatsApp: +923401807019</p>
                 </div>
               </div>
               
@@ -128,7 +128,7 @@ export default function ContactSection() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://wa.me/9234018077019" 
+                  href="https://wa.me/923401807019" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
