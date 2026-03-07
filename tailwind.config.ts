@@ -103,6 +103,10 @@ export default {
           "50%": { transform: "translateY(-20px)" },
         },
       },
+      boxShadow: {
+        'glow-cyan': '0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.1)',
+        'glow-purple': '0 0 15px rgba(138, 43, 226, 0.3), inset 0 0 10px rgba(138, 43, 226, 0.1)',
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

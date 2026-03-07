@@ -63,38 +63,38 @@ export default function ProjectsSection() {
     : projects.filter(project => project.categories.includes(activeFilter));
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-pink-900 relative overflow-hidden">
+    <section id="projects" className="py-20 bg-background relative overflow-hidden border-y border-white/5">
       {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-500/5 via-transparent to-pink-500/5" />
-      <div className="absolute top-20 right-20 w-80 h-80 bg-purple-300/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-64 h-64 bg-pink-300/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,transparent,black)] opacity-10" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
+      <div className="absolute top-20 right-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-20 left-20 w-64 h-64 bg-accent/10 rounded-full blur-[100px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-            Featured Projects
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-primary/10 text-primary border border-primary/30 font-mono text-xs font-bold uppercase tracking-widest mb-6 shadow-glow-cyan">
+            <span className="w-2 h-2 bg-primary animate-pulse"></span>
+            DEPLOYED_SYSTEMS
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-purple-600 dark:from-white dark:to-purple-400 bg-clip-text text-transparent">
-            Featured Projects
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground tracking-tight">
+            System <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-glow">Dashboards</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover innovative AI and machine learning solutions that demonstrate technical excellence and
-            deliver tangible business value across multiple industry verticals.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-mono text-sm tracking-wide">
+            Execution logs and architecture overviews for deployed AI and machine learning solutions.
           </p>
         </div>
 
         {/* Project Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12 font-mono">
           {filters.map((filter) => (
             <Button
               key={filter}
-              variant={activeFilter === filter ? "default" : "secondary"}
+              variant={activeFilter === filter ? "default" : "outline"}
               onClick={() => setActiveFilter(filter)}
-              className="text-sm font-medium"
+              className={`text-xs uppercase tracking-widest rounded-sm ${activeFilter === filter ? 'bg-primary text-black shadow-glow-cyan hover:bg-primary/90' : 'bg-transparent border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/80'}`}
               data-testid={`filter-${filter.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              {filter}
+              <span className="opacity-50 mr-2">/</span> {filter}
             </Button>
           ))}
         </div>
@@ -104,28 +104,39 @@ export default function ProjectsSection() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-3"
+              className="group bg-black/60 backdrop-blur-md border border-primary/20 hover:border-primary/60 rounded-sm overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-glow-cyan flex flex-col"
               data-testid={`project-card-${project.id}`}
             >
-              <img
-                src={project.image}
-                alt={`${project.title} project visualization`}
-                className="w-full h-48 object-cover"
-              />
+              {/* Terminal Window Header */}
+              <div className="h-6 bg-black border-b border-primary/20 flex items-center px-3 gap-1.5 opacity-80">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                <div className="ml-auto text-[10px] text-muted-foreground font-mono">system_v{project.id}.0</div>
+              </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2" data-testid={`project-title-${project.id}`}>
+              <div className="relative overflow-hidden border-b border-primary/20">
+                <img
+                  src={project.image}
+                  alt={`${project.title} project visualization`}
+                  className="w-full h-48 object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 mix-blend-luminosity group-hover:mix-blend-normal"
+                />
+                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay pointer-events-none group-hover:opacity-0 transition-opacity" />
+              </div>
+
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-bold mb-3 font-mono tracking-tight text-gray-200 group-hover:text-primary transition-colors" data-testid={`project-title-${project.id}`}>
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4" data-testid={`project-description-${project.id}`}>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-mono opacity-80 flex-1" data-testid={`project-description-${project.id}`}>
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 bg-primary/10 text-primary rounded text-xs border border-primary/20"
+                      className="px-2 py-1 bg-black text-primary rounded-sm text-[10px] font-mono border border-primary/30 tracking-widest uppercase shadow-[inset_0_0_8px_rgba(0,240,255,0.1)]"
                     >
                       {tag}
                     </span>
@@ -187,24 +198,43 @@ export default function ProjectsSection() {
         </div>
 
         <div className="mt-20">
-          <h3 className="text-2xl font-bold mb-8 text-center text-gray-800 dark:text-gray-200">Additional Projects</h3>
-          <div className="max-w-4xl mx-auto bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-white/20 dark:border-white/10 p-8 shadow-lg">
-            <ul className="space-y-4 text-left">
-              <li className="flex items-start">
-                <span className="text-primary mr-3 mt-1">✓</span>
-                <span className="text-gray-700 dark:text-gray-300"><strong>AI Document Intelligence System</strong> for automated extraction from passports, IDs, and financial documents</span>
+          <h3 className="text-2xl font-bold mb-8 text-center text-foreground font-mono tracking-tight uppercase">
+            <span className="text-primary mr-2">/</span>Additional Systems
+          </h3>
+          <div className="max-w-4xl mx-auto bg-black/60 backdrop-blur-md rounded-sm border border-primary/20 p-6 shadow-glow-cyan">
+            <div className="flex items-center mb-4 border-b border-white/10 pb-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/80 mr-2"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80 mr-2"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500/80 mr-4"></div>
+              <span className="text-xs font-mono text-muted-foreground">bash ~ agent_modules</span>
+            </div>
+            <ul className="space-y-4 text-left font-mono text-sm">
+              <li className="flex items-start group hover:bg-white/5 p-2 rounded-sm transition-colors cursor-default">
+                <span className="text-primary font-bold mr-3 mt-0.5 group-hover:text-glow">{`>`}</span>
+                <span className="text-muted-foreground group-hover:text-gray-300 transition-colors">
+                  [SUCCESS] Deployed <strong className="text-primary font-normal">AI Document Intelligence System</strong> for automated extraction from passports, IDs, and financial documents
+                </span>
               </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-3 mt-1">✓</span>
-                <span className="text-gray-700 dark:text-gray-300"><strong>Speech recognition application</strong> trained for industry-specific terminology</span>
+              <li className="flex items-start group hover:bg-white/5 p-2 rounded-sm transition-colors cursor-default">
+                <span className="text-accent font-bold mr-3 mt-0.5" style={{ textShadow: "0 0 8px rgba(138,43,226,0.6)" }}>{`>`}</span>
+                <span className="text-muted-foreground group-hover:text-gray-300 transition-colors">
+                  [SUCCESS] Trained <strong className="text-accent font-normal">Speech recognition application</strong> for industry-specific terminology
+                </span>
               </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-3 mt-1">✓</span>
-                <span className="text-gray-700 dark:text-gray-300"><strong>Custom JPEG compression algorithm</strong> for optimized image processing</span>
+              <li className="flex items-start group hover:bg-white/5 p-2 rounded-sm transition-colors cursor-default">
+                <span className="text-primary font-bold mr-3 mt-0.5 group-hover:text-glow">{`>`}</span>
+                <span className="text-muted-foreground group-hover:text-gray-300 transition-colors">
+                  [SUCCESS] Compiled <strong className="text-primary font-normal">Custom JPEG compression algorithm</strong> for optimized image processing
+                </span>
               </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-3 mt-1">✓</span>
-                <span className="text-gray-700 dark:text-gray-300"><strong>AI-driven data analytics dashboards</strong> for business insights</span>
+              <li className="flex items-start group hover:bg-white/5 p-2 rounded-sm transition-colors cursor-default">
+                <span className="text-accent font-bold mr-3 mt-0.5" style={{ textShadow: "0 0 8px rgba(138,43,226,0.6)" }}>{`>`}</span>
+                <span className="text-muted-foreground group-hover:text-gray-300 transition-colors">
+                  [SUCCESS] Initialized <strong className="text-accent font-normal">AI-driven data analytics dashboards</strong> for business insights
+                </span>
+              </li>
+              <li className="flex items-start p-2 rounded-sm">
+                <span className="text-green-500 font-bold mr-3 mt-0.5 animate-pulse">_</span>
               </li>
             </ul>
           </div>

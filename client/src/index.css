@@ -4,41 +4,41 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(222, 47%, 11%);
-  --foreground: hsl(213, 31%, 91%);
-  --card: hsl(222, 47%, 11%);
-  --card-foreground: hsl(213, 31%, 91%);
-  --popover: hsl(222, 47%, 11%);
-  --popover-foreground: hsl(213, 31%, 91%);
-  --primary: hsl(217, 91%, 60%);
-  --primary-foreground: hsl(222, 47%, 11%);
-  --secondary: hsl(222, 47%, 11%);
-  --secondary-foreground: hsl(213, 31%, 91%);
-  --muted: hsl(215, 28%, 17%);
-  --muted-foreground: hsl(217, 10%, 64%);
-  --accent: hsl(217, 91%, 60%);
-  --accent-foreground: hsl(222, 47%, 11%);
-  --destructive: hsl(0, 63%, 31%);
-  --destructive-foreground: hsl(213, 31%, 91%);
-  --border: hsl(215, 28%, 17%);
-  --input: hsl(215, 28%, 17%);
-  --ring: hsl(217, 91%, 60%);
-  --chart-1: hsl(217, 91%, 60%);
-  --chart-2: hsl(159, 100%, 36%);
-  --chart-3: hsl(42, 92%, 56%);
-  --chart-4: hsl(147, 79%, 42%);
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(240, 11%, 7%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(240, 11%, 7%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(185, 100%, 50%); /* Neon Cyan */
+  --primary-foreground: hsl(240, 10%, 4%);
+  --secondary: hsl(270, 100%, 65%); /* Neon Purple */
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 11%, 15%);
+  --muted-foreground: hsl(240, 10%, 65%);
+  --accent: hsl(270, 100%, 65%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(240, 11%, 18%);
+  --input: hsl(240, 11%, 18%);
+  --ring: hsl(185, 100%, 50%);
+  --chart-1: hsl(185, 100%, 50%);
+  --chart-2: hsl(270, 100%, 65%);
+  --chart-3: hsl(147, 79%, 42%);
+  --chart-4: hsl(42, 92%, 56%);
   --chart-5: hsl(341, 75%, 51%);
-  --sidebar: hsl(222, 47%, 11%);
-  --sidebar-foreground: hsl(213, 31%, 91%);
-  --sidebar-primary: hsl(217, 91%, 60%);
-  --sidebar-primary-foreground: hsl(222, 47%, 11%);
-  --sidebar-accent: hsl(217, 91%, 60%);
-  --sidebar-accent-foreground: hsl(222, 47%, 11%);
-  --sidebar-border: hsl(215, 28%, 17%);
-  --sidebar-ring: hsl(217, 91%, 60%);
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --sidebar: hsl(240, 10%, 4%);
+  --sidebar-foreground: hsl(210, 40%, 98%);
+  --sidebar-primary: hsl(185, 100%, 50%);
+  --sidebar-primary-foreground: hsl(240, 10%, 4%);
+  --sidebar-accent: hsl(270, 100%, 65%);
+  --sidebar-accent-foreground: hsl(0, 0%, 100%);
+  --sidebar-border: hsl(240, 11%, 18%);
+  --sidebar-ring: hsl(185, 100%, 50%);
+  --font-sans: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-mono: 'JetBrains Mono', monospace;  
   --radius: 0.75rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(217, 91%, 60%, 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(217, 91%, 60%, 0.00);
@@ -146,9 +146,21 @@
 
   /* Gradient backgrounds */
   .bg-gradient-radial {
-    background-image: radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.15), transparent 50%),
-                      radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.15), transparent 50%),
-                      radial-gradient(circle at 40% 70%, rgba(16, 185, 129, 0.15), transparent 50%);
+    background-image: radial-gradient(circle at 30% 40%, rgba(0, 240, 255, 0.08), transparent 50%),
+                      radial-gradient(circle at 80% 10%, rgba(138, 43, 226, 0.08), transparent 50%),
+                      radial-gradient(circle at 40% 70%, rgba(0, 240, 255, 0.05), transparent 50%);
+  }
+
+  /* Grid background for technical feel */
+  .bg-grid-white {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* Glowing text */
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
   }
 
   /* Skill progress animation */
@@ -160,11 +172,13 @@
   .project-card {
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255, 0.05);
   }
 
   .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), inset 0 0 15px rgba(0, 240, 255, 0.05);
+    border-color: rgba(0, 240, 255, 0.3);
   }
 
   .light .project-card:hover {
