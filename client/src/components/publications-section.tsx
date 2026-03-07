@@ -1,60 +1,55 @@
-import { ExternalLink, FileText, Brain, Network, Microscope, Tag, Shield } from "lucide-react";
+import { ExternalLink, FileText, Brain, Network, Microscope, Tag, Shield, Database } from "lucide-react";
 
-const publications = [
+const certifications = [
   {
     id: 1,
-    title: "Advancing Pediatric Brain Mapping: An AI-Driven Adaptive Functional MRI Pipeline",
-    conference: "RSNA 2024",
-    venue: "Radiological Society of North America",
-    description: "A self-supervised learning based adaptive pipeline for identification of paediatric functional brain networks using advanced AI techniques for improved clinical assessment.",
-    authors: "Akshay Kumaar M, Sachin Patalasingh, Malvika Ganesh, Radha Kumari, Rimjhim Agrawal",
+    title: "Agentic AI Engineer",
+    venue: "Udemy",
+    description: "Comprehensive training on building autonomous AI agents and multi-agent systems.",
+    authors: "ED Donner",
     icon: Brain,
-    status: "Conference",
+    status: "Certified",
     link: "#"
   },
   {
     id: 2,
-    title: "Harmonizing tb-fMRI and rs-fMRI: A Generative approach for mapping Language Networks",
-    conference: "ECR 2024",
-    venue: "European Congress of Radiology",
-    description: "Utilizing generative modelling to map task-based fMRI analogous brain activity maps for Language network using rs-fMRI connectivity data.",
-    authors: "Akshay Kumaar M, Sachin Patalasingh, Rimjhim Agrawal, Saurabh Jain, et al.",
+    title: "Deep Learning Specialization",
+    venue: "DeepLearning.AI",
+    description: "Advanced concepts in neural networks, hyperparameter tuning, CNNs, and sequence models.",
+    authors: "Andrew Ng",
     icon: Network,
-    status: "Conference",
-    link: "https://dx.doi.org/10.26044/ecr2024/C-13388"
+    status: "Certified",
+    link: "#"
   },
   {
     id: 3,
-    title: "Brain Tumor Classification using Pre-Trained Auxiliary Classifying Style-based GAN",
-    conference: "IJIMAI",
-    venue: "International Journal of Interactive Multimedia and AI",
-    description: "An auxiliary classifying conditional generative adversarial network based on StyleGAN, achieving ~99.5% accuracy in classifying brain tumors from MR Images.",
-    authors: "Akshay Kumaar M, Dr. Duraimurugan Samiayya, Venkatesan Rajinikanth, et al.",
+    title: "Machine Learning with Python",
+    venue: "IBM",
+    description: "Practical application of machine learning algorithms using Python and scikit-learn.",
+    authors: "IBM Skills Network",
     icon: Microscope,
-    status: "Published",
-    link: "https://reunir.unir.net/handle/123456789/14357"
+    status: "Certified",
+    link: "#"
   },
   {
     id: 4,
-    title: "System and Method for determining Networks of Brain from Resting State MRI data using ML",
-    conference: "US Patent",
-    venue: "US Patent US20240366087A1",
-    description: "A method for determining brain networks using resting-state MRI data and machine learning to evaluate a subject's health and brain connectivity patterns.",
-    authors: "Dr. Rimjhim Agrawal, Ruchi Sharma, Dilip Rajeswari, Akshay Kumaar Murali",
-    icon: Tag,
-    status: "Patent Issued",
-    link: "https://patentcenter.uspto.gov/applications/18285639"
+    title: "Databases and SQL for Data Science",
+    venue: "IBM",
+    description: "Relational database concepts, SQL querying, and database access from Python.",
+    authors: "IBM Skills Network",
+    icon: Database,
+    status: "Certified",
+    link: "#"
   },
   {
     id: 5,
-    title: "A Hybrid Framework for Intrusion Detection in Healthcare Systems using Deep Learning",
-    conference: "Frontiers",
-    venue: "Frontiers in Public Health",
-    description: "A Machine Learning based approach to detect network & application intrusions, achieving ~99.2% accuracy in detecting 19 types of cyber attacks.",
-    authors: "Akshay Kumaar M, Dr. Duraimurugan Samiayya, Durai Raj Vincent P M, et al.",
-    icon: Shield,
-    status: "Published",
-    link: "https://www.frontiersin.org/articles/10.3389/fpubh.2021.824898/full"
+    title: "Data Visualization with Python",
+    venue: "IBM",
+    description: "Creating impactful data visualizations using Matplotlib, Seaborn, and Folium.",
+    authors: "IBM Skills Network",
+    icon: Tag,
+    status: "Certified",
+    link: "#"
   }
 ];
 
@@ -63,20 +58,20 @@ export default function PublicationsSection() {
     <section id="publications" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Research & Publications</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Certifications</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My research contributions in AI, medical imaging, and computer vision published in leading conferences and journals.
+            Professional certifications demonstrating continuous learning and expertise in core AI technologies.
           </p>
         </div>
 
         <div className="space-y-8">
-          {publications.map((publication) => {
-            const IconComponent = publication.icon;
+          {certifications.map((cert) => {
+            const IconComponent = cert.icon;
             return (
-              <div 
-                key={publication.id}
+              <div
+                key={cert.id}
                 className="p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow"
-                data-testid={`publication-${publication.id}`}
+                data-testid={`certification-${cert.id}`}
               >
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   <div className="lg:w-20 flex-shrink-0">
@@ -84,45 +79,41 @@ export default function PublicationsSection() {
                       <IconComponent className="h-8 w-8 text-primary" />
                     </div>
                   </div>
-                  
+
                   <div className="flex-1">
                     <div className="mb-3">
-                      <h3 className="text-xl font-semibold mb-2" data-testid={`publication-title-${publication.id}`}>
-                        {publication.title}
+                      <h3 className="text-xl font-semibold mb-2" data-testid={`certification-title-${cert.id}`}>
+                        {cert.title}
                       </h3>
                       <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-2">
-                        <span className={`px-2 py-1 rounded text-xs border ${
-                          publication.status === "Published" || publication.status === "Patent Issued"
-                            ? "bg-accent/10 text-accent border-accent/20"
-                            : "bg-primary/10 text-primary border-primary/20"
-                        }`}>
-                          {publication.status}
+                        <span className={`px-2 py-1 rounded text-xs border bg-primary/10 text-primary border-primary/20`}>
+                          {cert.status}
                         </span>
-                        <span>{publication.venue}</span>
+                        <span>{cert.venue}</span>
                       </div>
-                      <p className="text-muted-foreground mb-3" data-testid={`publication-description-${publication.id}`}>
-                        {publication.description}
+                      <p className="text-muted-foreground mb-3" data-testid={`certification-description-${cert.id}`}>
+                        {cert.description}
                       </p>
-                      <div className="text-sm text-muted-foreground" data-testid={`publication-authors-${publication.id}`}>
-                        Authors: {publication.authors}
+                      <div className="text-sm text-muted-foreground" data-testid={`certification-authors-${cert.id}`}>
+                        Instructor/Issuer: {cert.authors}
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-3">
-                    <a 
-                      href={publication.link} 
-                      target="_blank" 
+                    <a
+                      href={cert.link}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 transition-colors"
-                      data-testid={`publication-link-${publication.id}`}
+                      data-testid={`certification-link-${cert.id}`}
                     >
                       <ExternalLink className="h-5 w-5" />
                     </a>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="text-primary hover:text-primary/80 transition-colors"
-                      data-testid={`publication-pdf-${publication.id}`}
+                      data-testid={`certification-pdf-${cert.id}`}
                     >
                       <FileText className="h-5 w-5" />
                     </a>
@@ -134,12 +125,13 @@ export default function PublicationsSection() {
         </div>
 
         <div className="text-center mt-12">
-          <a 
-            href="#" 
+          <a
+            href="https://linkedin.com/in/aashir-noman-138820152"
+            target="_blank"
             className="inline-flex items-center px-6 py-3 rounded-lg border border-border text-foreground hover:bg-muted transition-colors"
-            data-testid="button-view-all-publications"
+            data-testid="button-view-all-certifications"
           >
-            View All Publications <ExternalLink className="ml-2 h-4 w-4" />
+            Connect on LinkedIn <ExternalLink className="ml-2 h-4 w-4" />
           </a>
         </div>
       </div>

@@ -1,74 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 
 const skillsData = {
-  "Machine Learning": {
+  "Artificial Intelligence": {
     icon: "🧠",
     color: "from-blue-500 to-cyan-500",
     skills: [
-      { name: "Deep Learning & Neural Networks", level: "Expert", icon: "🔬" },
-      { name: "CNN & Computer Vision", level: "Expert", icon: "👁️" },
-      { name: "RNN & LSTM", level: "Advanced", icon: "🔄" },
-      { name: "Transformer Models", level: "Expert", icon: "⚡" },
-      { name: "Supervised Learning", level: "Expert", icon: "🎯" },
-      { name: "Unsupervised Learning", level: "Advanced", icon: "🔍" },
-      { name: "Reinforcement Learning", level: "Advanced", icon: "🎮" },
-      { name: "Ensemble Methods", level: "Expert", icon: "🎭" }
+      { name: "Generative AI Systems", level: "Expert", icon: "✨" },
+      { name: "LLM Engineering", level: "Expert", icon: "🤖" },
+      { name: "RAG Systems", level: "Expert", icon: "📚" },
+      { name: "Autonomous AI Agents", level: "Expert", icon: "👤" },
+      { name: "AI Automation Systems", level: "Expert", icon: "⚙️" },
+      { name: "Natural Lang. Processing", level: "Expert", icon: "💬" },
+      { name: "Deep Learning", level: "Expert", icon: "🔬" }
     ]
   },
-  "AI Frameworks": {
-    icon: "⚡", 
-    color: "from-green-500 to-emerald-500",
-    skills: [
-      { name: "PyTorch", level: "Expert", icon: "🔥" },
-      { name: "TensorFlow", level: "Expert", icon: "🧮" },
-      { name: "Keras", level: "Advanced", icon: "🎨" },
-      { name: "Scikit-learn", level: "Expert", icon: "🔧" },
-      { name: "Hugging Face", level: "Expert", icon: "🤗" },
-      { name: "OpenAI API", level: "Expert", icon: "🧠" },
-      { name: "LangChain", level: "Advanced", icon: "⛓️" },
-      { name: "CrewAI", level: "Advanced", icon: "👥" }
-    ]
-  },
-  "Data Science": {
+  "Machine Learning": {
     icon: "📊",
     color: "from-purple-500 to-pink-500",
     skills: [
-      { name: "Pandas & NumPy", level: "Expert", icon: "🐼" },
-      { name: "Data Visualization", level: "Expert", icon: "📈" },
-      { name: "Statistical Analysis", level: "Advanced", icon: "📉" },
-      { name: "Feature Engineering", level: "Expert", icon: "⚙️" },
-      { name: "Data Preprocessing", level: "Expert", icon: "🔄" },
-      { name: "Time Series Analysis", level: "Advanced", icon: "⏰" },
-      { name: "A/B Testing", level: "Advanced", icon: "🧪" },
-      { name: "Data Pipeline Design", level: "Expert", icon: "🏗️" }
-    ]
-  },
-  "AI Applications": {
-    icon: "🚀",
-    color: "from-orange-500 to-red-500",
-    skills: [
-      { name: "Natural Language Processing", level: "Expert", icon: "💬" },
-      { name: "Computer Vision", level: "Expert", icon: "👁️" },
-      { name: "Speech Recognition", level: "Advanced", icon: "🎤" },
-      { name: "Recommendation Systems", level: "Advanced", icon: "💡" },
-      { name: "Chatbot Development", level: "Expert", icon: "🤖" },
-      { name: "AI Agents", level: "Advanced", icon: "👤" },
-      { name: "Model Deployment", level: "Expert", icon: "🚀" },
-      { name: "MLOps & CI/CD", level: "Advanced", icon: "⚙️" }
-    ]
-  },
-  "Cloud & Infrastructure": {
-    icon: "☁️",
-    color: "from-indigo-500 to-purple-500",
-    skills: [
-      { name: "AWS SageMaker", level: "Advanced", icon: "☁️" },
-      { name: "Google Cloud AI", level: "Advanced", icon: "🌐" },
-      { name: "Azure ML", level: "Advanced", icon: "🔵" },
-      { name: "Docker & Kubernetes", level: "Advanced", icon: "🐳" },
-      { name: "RESTful APIs", level: "Expert", icon: "🔌" },
-      { name: "Microservices", level: "Advanced", icon: "🔧" },
-      { name: "Database Design", level: "Expert", icon: "🗄️" },
-      { name: "Cloud Architecture", level: "Advanced", icon: "🏗️" }
+      { name: "Predictive Modeling", level: "Expert", icon: "📈" },
+      { name: "Time Series Analysis", level: "Expert", icon: "⏰" },
+      { name: "Anomaly Detection", level: "Expert", icon: "🔍" },
+      { name: "Classification & Regression", level: "Expert", icon: "🎯" },
+      { name: "Feature Engineering", level: "Expert", icon: "⚙️" }
     ]
   },
   "Programming Languages": {
@@ -76,32 +30,27 @@ const skillsData = {
     color: "from-cyan-500 to-blue-500",
     skills: [
       { name: "Python", level: "Expert", icon: "🐍" },
-      { name: "R", level: "Advanced", icon: "📊" },
       { name: "SQL", level: "Expert", icon: "🗄️" },
-      { name: "JavaScript", level: "Advanced", icon: "🟨" },
-      { name: "TypeScript", level: "Advanced", icon: "🔷" },
-      { name: "Bash/Shell", level: "Advanced", icon: "🐚" },
-      { name: "Git Version Control", level: "Expert", icon: "📝" },
-      { name: "Algorithm Design", level: "Expert", icon: "🧩" }
+      { name: "JavaScript / TypeScript", level: "Advanced", icon: "🟨" },
+      { name: "Node.js", level: "Advanced", icon: "🟢" },
+      { name: "React", level: "Advanced", icon: "⚛️" },
+      { name: "FastAPI", level: "Expert", icon: "⚡" }
     ]
   }
 };
 
 const frameworks = [
-  "PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Hugging Face", 
-  "OpenAI API", "LangChain", "CrewAI", "Pandas", "NumPy", 
-  "Matplotlib", "Seaborn", "Plotly", "Streamlit", "FastAPI"
+  "LangChain", "LangGraph", "CrewAI", "LlamaIndex",
+  "OpenAI APIs", "HuggingFace Transformers"
 ];
 
 const databases = [
-  "PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch", 
-  "BigQuery", "Snowflake", "Apache Spark", "Apache Kafka", "Airflow"
+  "Apache Spark", "Airflow / Prefect", "Supabase", "PostgreSQL",
+  "Pinecone", "Weaviate", "Chroma"
 ];
 
 const tools = [
-  "Jupyter Notebooks", "Google Colab", "VS Code", "Docker", "Kubernetes",
-  "Git", "GitHub Actions", "MLflow", "Weights & Biases", "TensorBoard",
-  "AWS SageMaker", "Google Cloud AI", "Azure ML", "Heroku", "Vercel"
+  "Docker", "AWS", "Google Cloud", "Azure", "Vercel"
 ];
 
 function SkillCard({ skill, categoryColor }: { skill: { name: string; level: string; icon: string }, categoryColor: string }) {
@@ -156,7 +105,7 @@ export default function SkillsSection() {
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-indigo-500/5 via-transparent to-purple-500/5" />
       <div className="absolute top-20 left-20 w-72 h-72 bg-indigo-300/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-300/10 rounded-full blur-3xl" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-sm font-medium mb-6">
@@ -167,14 +116,14 @@ export default function SkillsSection() {
             Technical Skills
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Comprehensive expertise in artificial intelligence, machine learning, and data science, demonstrated through 
+            Comprehensive expertise in artificial intelligence, machine learning, and data science, demonstrated through
             successful project delivery and exceptional client outcomes across diverse industry sectors.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(skillsData).map(([category, data]) => (
-            <div 
+            <div
               key={category}
               className="group p-6 rounded-2xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-white/10 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2"
               data-testid={`skill-category-${category.toLowerCase().replace(/\s+/g, '-')}`}
@@ -187,9 +136,9 @@ export default function SkillsSection() {
               </div>
               <div className="space-y-3">
                 {data.skills.map((skill) => (
-                  <SkillCard 
-                    key={skill.name} 
-                    skill={skill} 
+                  <SkillCard
+                    key={skill.name}
+                    skill={skill}
                     categoryColor={data.color}
                   />
                 ))}
@@ -203,11 +152,11 @@ export default function SkillsSection() {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mr-4 shadow-lg">
                 <span className="text-2xl">📚</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Frameworks</h3>
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">AI Frameworks & Tools</h3>
             </div>
             <div className="flex flex-wrap gap-3">
               {frameworks.map((framework) => (
-                <span 
+                <span
                   key={framework}
                   className="group/tag px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 text-purple-700 dark:text-purple-300 rounded-xl text-sm font-medium border border-purple-200 dark:border-purple-700 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-default"
                 >
@@ -217,13 +166,13 @@ export default function SkillsSection() {
             </div>
           </div>
 
-          {/* Data Science */}
+          {/* Data Engineering & Infrastructure */}
           <div className="group p-6 rounded-2xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-white/10 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-2" data-testid="skill-category-data-science">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center mr-4 shadow-lg">
                 <span className="text-2xl">📊</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Data Science</h3>
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Data Engineering & DBs</h3>
             </div>
             <div className="space-y-3">
               {databases.map((skill, index) => (
@@ -237,13 +186,13 @@ export default function SkillsSection() {
             </div>
           </div>
 
-          {/* Specializations */}
+          {/* Cloud & DevOps */}
           <div className="group p-6 rounded-2xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-white/10 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-300 hover:-translate-y-2" data-testid="skill-category-specializations">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center mr-4 shadow-lg">
                 <span className="text-2xl">⚡</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Specializations</h3>
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Cloud & DevOps</h3>
             </div>
             <div className="space-y-3">
               {tools.map((tool, index) => (
