@@ -33,7 +33,7 @@ const projects = [
     id: 3,
     title: "AI Crypto Intelligence Dashboard",
     description: "Built a real-time cryptocurrency analytics platform that monitors market activity, detects anomalies, and generates insights for short-term trading strategies using machine learning models and real-time data streams.",
-    image: "https://images.unsplash.com/photo-1621504450181-5d1566bc90e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     tags: ["Machine Learning", "Time Series", "Anomaly Detection", "Real-Time Data"],
     categories: ["Data Intel"],
     github: "#",
