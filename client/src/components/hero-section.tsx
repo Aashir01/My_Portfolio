@@ -17,9 +17,10 @@ export default function HeroSection() {
             <em style={{ fontStyle: "normal", color: "var(--vermilion)" }}>Noman</em>
           </h1>
           <p className="kicker" style={{ maxWidth: "36rem", fontSize: 20 }}>
-            I build LLM systems that are allowed to touch real money, real patients, and real decisions &mdash;
-            retrieval that cites its sources, agents that respect a budget, and guardrails that fail the build before
-            a model gets a chance to fail in production.
+            I find the thing that is actually broken — lost documents, slow claims, signals that lie, processes held
+            together by phone calls — and I build the LLM system that removes it. Retrieval that cites its sources,
+            agents that respect a budget, and guardrails that fail the build before a model gets a chance to fail in
+            production.
           </p>
           <div className="est" style={{ marginTop: 26, display: "flex", gap: 26, flexWrap: "wrap" }}>
             <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
@@ -142,8 +143,9 @@ export default function HeroSection() {
         <div className="notice">
           <div className="label">Working note</div>
           <p>
-            Most of my work is the part that is not the prompt: deterministic fallbacks, tiered autonomy limits,
-            injection boundaries, human approval gates, and evaluation harnesses that fail the build before it ships.
+            Most of my work is the part that is not the prompt: I diagnose the problem first, then build the
+            deterministic fallbacks, tiered autonomy limits, injection boundaries, human approval gates, and evaluation
+            harnesses that fail the build before it ships.
           </p>
         </div>
       </div>

@@ -10,14 +10,15 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-start">
           <div>
             <p className="lede" style={{ marginBottom: 18 }}>
-              AI / ML Engineer with 3+ years of hands-on experience shipping production LLM systems &mdash;
-              retrieval-augmented generation, multi-agent workflows, fine-tuned open-weight models, and end-to-end AI
-              automation.
+              AI / ML Engineer with 3+ years of hands-on experience diagnosing real problems and shipping the LLM
+              system that removes them &mdash; retrieval-augmented generation, multi-agent workflows, fine-tuned
+              open-weight models, and end-to-end AI automation.
             </p>
             <p style={{ maxWidth: "36rem", fontSize: 18, lineHeight: 1.6, margin: "0 0 18px" }}>
-              Top Rated on Upwork with a consistent five-star record across data science and applied AI engagements.
-              Currently architecting an AI-assisted travel booking platform covering flight APIs, payments, and
-              document automation. Seeking senior remote and contract engagements building LLM and agentic AI products.
+              Top Rated on Upwork with a consistent five-star record across data science and applied AI engagements —
+              the result of solving clients' actual problems, not just handing over code. Currently architecting an
+              AI-assisted travel booking platform covering flight APIs, payments, and document automation. Seeking
+              senior remote and contract engagements where an LLM system has to be trusted with something consequential.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-7" style={{ marginTop: 32 }}>

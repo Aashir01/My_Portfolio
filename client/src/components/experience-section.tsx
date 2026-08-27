@@ -5,10 +5,10 @@ const roles = [
     location: "Rawalpindi & Barcelona",
     title: "AI/ML Engineer & Founder",
     points: [
-      "Architected and built a flight and Umrah booking platform (SkyNest) on Supabase/PostgreSQL, integrating Duffel and Amadeus flight APIs with a mock-first strategy and EU payment rails (Mollie, GoCardless, Wise Business).",
-      "Authored a production-grade AI coding agent specification that drives feature development, schema migrations, and QA across the platform codebase.",
-      "Built LLM-powered extraction, validation, and checklist generation for visa and Umrah documentation, sharply reducing manual review time per case.",
-      "Prototyped Python middleware and RPA to reach a legacy Galileo GDS where no modern API was available.",
+      "Solved the fragmented booking problem for flight and Umrah travel — built SkyNest on Supabase/PostgreSQL with a mock-first strategy, integrating Duffel and Amadeus flight APIs and EU payment rails (Mollie, GoCardless, Wise Business) so bookings and payouts work across markets without a modern payment stack fight.",
+      "Removed the drag of hand-written, drifting code by authoring a production-grade AI coding agent specification that drives feature development, schema migrations, and QA across the codebase — features ship in step, not out of sync.",
+      "Cut manual visa and Umrah case review time sharply by building LLM-powered extraction, validation, and checklist generation — the paperwork is pre-checked before a human touches it.",
+      "Broke the deadlock of a legacy Galileo GDS with no modern API by prototyping Python middleware and RPA to reach it — the old system talks to the new stack.",
     ],
   },
   {
@@ -17,11 +17,11 @@ const roles = [
     location: "Remote",
     title: "Freelance AI/ML Engineer — Top Rated",
     points: [
-      "Built RAG and document intelligence systems that ingest large PDF corpora, index them into vector stores, and return grounded, cited answers over private datasets.",
-      "Fine-tuned deep learning models for measurable accuracy gains on client data, including data-efficient training loops and evaluation.",
-      "Delivered chatbot and OpenAI ChatCompletion integrations, prompt pipelines, and structured-output tooling for downstream automation.",
-      "Applied ML and data engineering: time series clustering, speech recognition for domain jargon, custom JPEG compression, octave-convolution CNNs, Tableau Prep to PySpark migration, and large-scale data cleaning and visualization.",
-      "Maintained five-star ratings and repeat engagements across a broad client portfolio.",
+      "Solved the 'answers with no receipts' problem over private datasets — built RAG and document intelligence systems that ingest large PDF corpora, index them into vector stores, and return grounded, cited answers instead of confident guesses.",
+      "Won measurable accuracy gains where off-the-shelf models underperformed client data — fine-tuned deep learning models with data-efficient training loops and rigorous evaluation.",
+      "Automated downstream workflows that were drowning in manual output — delivered chatbot and OpenAI ChatCompletion integrations, prompt pipelines, and structured-output tooling.",
+      "Applied ML and data engineering to specific, messy real-world problems: time series clustering, speech recognition for industry jargon, custom JPEG compression, octave-convolution CNNs, a Tableau Prep to PySpark migration, and large-scale data cleaning and visualization.",
+      "Kept the work coming by solving clients' problems well — maintained five-star ratings and repeat engagements across a broad portfolio.",
     ],
   },
   {
@@ -30,7 +30,7 @@ const roles = [
     location: "Remote",
     title: "Collaborator",
     points: [
-      "Collaborated on the Sri Lankan Autism Prediction Project, contributing to modelling and evaluation for an applied AI system predicting autism indicators in toddlers.",
+      "Helped toward early identification of autism indicators in toddlers where timely screening is scarce — contributed modelling and evaluation to the Sri Lankan Autism Prediction Project for an applied AI system.",
     ],
   },
 ];
@@ -44,8 +44,8 @@ export default function ExperienceSection() {
           <div className="label">Where the work happened</div>
         </div>
         <p className="lede">
-          Three years of building and shipping AI systems for clients across travel, document intelligence, and
-          applied machine learning.
+          Three years of being handed a slow, broken, or impossible thing and handing back a system that works — for
+          clients across travel, document intelligence, and applied machine learning.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>

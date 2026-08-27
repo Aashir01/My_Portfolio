@@ -4,7 +4,7 @@ const flagships = [
     name: "Meridian",
     title: "Autonomous Logistics Control Plane",
     description:
-      "An agent mesh that watches ports, vessels and inventory, detects disruptions, and executes a response against ERP/TMS/WMS — inside limits a model cannot talk its way past.",
+      "Disruptions at ports, on vessels, and in inventory were being caught late and resolved by manual phone calls across suppliers, TMS, WMS, and ERP — a slow, error-prone chain. I built an agent mesh that watches all of them, detects a disruption, and executes the response itself against ERP/TMS/WMS — but only inside hard limits the model cannot talk its way past. Delays and stock-outs now get handled in minutes, not days, and anything out of bounds escalates instead of guessing.",
     take: "Tiered autonomy, signed execution, CVaR₉₀ ranking.",
     stack: "Python · Claude · FastAPI · Kafka · TimescaleDB · React",
     tests: "185 tests",
@@ -15,7 +15,7 @@ const flagships = [
     name: "VisaGuard",
     title: "Visa Document Intelligence",
     description:
-      "Scans a visa application bundle and reports what is wrong before the consulate does — missing documents, name mismatches, insufficient funds, non-compliant photos.",
+      "Visa applications were getting refused for avoidable errors — missing documents, name mismatches, insufficient funds, non-compliant photos — only discovered at the consulate after fees and time were already lost. I built a system that scans the whole application bundle and reports exactly what is wrong before it ever gets submitted. Rejections that used to cost weeks now get caught in a single deterministic pass — 2–3 LLM calls per bundle, so it is fast and cheap to run per check.",
     take: "Deterministic-first, 2–3 LLM calls per bundle.",
     stack: "FastAPI · Next.js · Claude / DeepSeek · Tesseract",
     tests: "224 tests",
@@ -26,7 +26,7 @@ const flagships = [
     name: "Appeals Bot",
     title: "Medical Insurance Appeals Bot",
     description:
-      "Reads denial letters, drafts legally grounded appeals, and routes every one to a licensed human before it leaves the building. The AI never sends anything on its own.",
+      "Insurers keep denying legitimate claims with opaque letters, and patients — who rarely know the legal grounds — almost never fight back, so valid appeals fail. I built a system that reads each denial letter, drafts a legally grounded appeal, and routes every single one to a licensed human before it leaves the building. The AI writes the case; it never sends anything on its own — three independent liability gates keep a person responsible, so appeals go out grounded in regulation rather than guesswork.",
     take: "Three independent liability gates.",
     stack: "FastAPI · LangGraph · Claude · Postgres · Alembic",
     tests: "119 tests",
@@ -37,7 +37,7 @@ const flagships = [
     name: "Quran Agent",
     title: "Quran Research Agent",
     description:
-      "Deterministic retrieval and agentic research over a closed corpus — 6,236 ayat, 130k morphological segments, 1,651 roots. Scripture is rendered from Postgres, never generated.",
+      "Generic search tools over an authoritative religious corpus return loosely-sourced or model-guessed answers — unacceptable where every citation has to be exact. I built deterministic retrieval and agentic research over a closed corpus of 6,236 ayat, 130k morphological segments, and 1,651 roots, where scripture is rendered from PostgreSQL, never generated. The result is answers that cite the actual text — no hallucinated verses, no fabricated references.",
     take: "Exhaustive over probabilistic retrieval.",
     stack: "FastAPI · PostgreSQL · Next.js PWA · LangGraph · MCP",
     tests: "89 tests",
@@ -48,7 +48,7 @@ const flagships = [
     name: "mini-agent",
     title: "A Coding Agent, Built to Be Read",
     description:
-      "A coding agent where the edit-application ladder is the hard part. When the model's replacement does not match byte-for-byte, progressively looser passes retry — but each must find exactly one match.",
+      "Most coding agents apply an LLM's patch too loosely and silently corrupt the wrong region of code when the replacement drifts from the source. I built an agent where the edit-application ladder is the hard part: when the model's replacement does not match byte-for-byte, progressively looser passes retry — but each must find exactly one match. The outcome is edits that land where they were intended, and ambiguity is an error, never a guess.",
     take: "Ambiguity is an error, never a guess.",
     stack: "TypeScript · Node 22+ · Anthropic + OpenAI transports",
     tests: "40 tests",
@@ -59,7 +59,7 @@ const flagships = [
     name: "MFIE",
     title: "Macro-Informed Financial Intelligence Engine",
     description:
-      "Treats a chart pattern as a hypothesis and the macroeconomy as the evidence. A setup becomes a signal only after surviving a chain of econometric filters.",
+      "Chart patterns in isolation fire false signals, so traders act on setups the macro picture quietly contradicts — a reliable way to lose money. I built an engine that treats a chart pattern as a hypothesis and the macroeconomy as the evidence: a setup becomes a signal only after surviving a chain of econometric filters that correct for overlapping observations. The result is far fewer false setups and signals only when the macro evidence actually corroborates.",
     take: "Corrects for overlapping observations.",
     stack: "Python · pandas/numpy · SQLAlchemy · TimescaleDB · Streamlit",
     tests: "163 tests",
@@ -68,14 +68,14 @@ const flagships = [
 ];
 
 const moreWork = [
-  { title: "DataSense AI", what: "SaaS data-analyst agent with whitelisted query planner", href: "https://github.com/Aashir01/AI-Data-Analyst-Agent" },
-  { title: "Enterprise AI Knowledge Assistant", what: "Production RAG assistant for enterprise document search", href: "https://github.com/Aashir01/Enterprise-AI-Knowledge-Assistant" },
-  { title: "El Madina Viajes", what: "Tour-booking platform with a shared pricing engine", href: "https://github.com/Aashir01/EL-MADINA-VIAJES" },
-  { title: "Hierarchical Agent Swarm", what: "Manager–worker tree coordinating 100+ agents", href: "https://github.com/Aashir01/hierarchical-agent-swarm" },
-  { title: "Nexus Motion", what: "Multi-agent pipeline for end-to-end video production", href: "https://github.com/Aashir01/nexus-motion-AI-video-agency" },
-  { title: "Spain Appointment Bot", what: "Appointment tracking and notification automation", href: "https://github.com/Aashir01/spain-visa-appointment-bot" },
-  { title: "March ML Mania 2026", what: "Kaggle tournament model with calibrated ensembles", href: "https://github.com/Aashir01/-March-Machine-Learning-Mania-2026" },
-  { title: "Deep Learning Projects", what: "Applied DL notebooks and experiments", href: "https://github.com/Aashir01/Deep-Learning-Projects" },
+  { title: "DataSense AI", what: "Stops non-analysts from mis-querying data — SaaS agent with a whitelisted query planner that only allows safe SQL", href: "https://github.com/Aashir01/AI-Data-Analyst-Agent" },
+  { title: "Enterprise AI Knowledge Assistant", what: "Fixes slow, siloed document search — production RAG assistant returning grounded answers over enterprise docs", href: "https://github.com/Aashir01/Enterprise-AI-Knowledge-Assistant" },
+  { title: "El Madina Viajes", what: "Removes pricing inconsistencies across a booking site — tour platform with one shared, source-of-truth pricing engine", href: "https://github.com/Aashir01/EL-MADINA-VIAJES" },
+  { title: "Hierarchical Agent Swarm", what: "Solves coordination breaking down at scale — manager–worker tree running 100+ agents without collisions", href: "https://github.com/Aashir01/hierarchical-agent-swarm" },
+  { title: "Nexus Motion", what: "Cuts the manual pipeline in video production — multi-agent pipeline handling it end to end", href: "https://github.com/Aashir01/nexus-motion-AI-video-agency" },
+  { title: "Spain Appointment Bot", what: "Kills the dead-time of watching a portal — appointment tracking and instant notification automation", href: "https://github.com/Aashir01/spain-visa-appointment-bot" },
+  { title: "March ML Mania 2026", what: "Tames noisy brackets with calibrated, ensembled predictions — Kaggle tournament model", href: "https://github.com/Aashir01/-March-Machine-Learning-Mania-2026" },
+  { title: "Deep Learning Projects", what: "Applied DL notebooks and experiments — working demos, not toy tutorials", href: "https://github.com/Aashir01/Deep-Learning-Projects" },
 ];
 
 export default function ProjectsSection() {
@@ -87,8 +87,10 @@ export default function ProjectsSection() {
           <div className="label">Six flagship builds &middot; 820 tests</div>
         </div>
         <p className="lede">
-          Six production-grade systems in the open, carrying 820 tests between them — engines, guardrails, and eval
-          suites, not notebooks. Five of the six run end-to-end with no API key, on deterministic or synthetic fallbacks.
+          Each build below exists because a real problem kept costing someone time, money, or trust. I went after the
+          problem first, shipped the system that removes it, and left the outcome written down — 820 tests between six
+          flagship systems, polished guardrails, and engines, not notebooks. Five of the six run end-to-end with no API
+          key, on deterministic or synthetic fallbacks.
         </p>
 
         <div
