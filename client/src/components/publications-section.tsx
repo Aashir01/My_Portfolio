@@ -1,9 +1,10 @@
 const certifications = [
-  { id: 1, code: "CERT 101", title: "IBM Data Science Professional Certificate", venue: "IBM" },
-  { id: 2, code: "CERT 102", title: "Databases and SQL for Data Science", venue: "IBM" },
-  { id: 3, code: "CERT 103", title: "Machine Learning", venue: "IBM" },
-  { id: 4, code: "CERT 104", title: "Deep Learning", venue: "IBM" },
-  { id: 5, code: "CERT 105", title: "Data Visualization with Python", venue: "IBM" },
+  { id: 1, code: "CERT 101", title: "Agentic AI Engineer", venue: "Udemy" },
+  { id: 2, code: "CERT 102", title: "IBM Data Science Professional Certificate", venue: "IBM" },
+  { id: 3, code: "CERT 103", title: "Databases and SQL for Data Science", venue: "IBM" },
+  { id: 4, code: "CERT 104", title: "Machine Learning", venue: "IBM" },
+  { id: 5, code: "CERT 105", title: "Deep Learning", venue: "IBM" },
+  { id: 6, code: "CERT 106", title: "Data Visualization with Python", venue: "IBM" },
 ];
 
 export default function PublicationsSection() {

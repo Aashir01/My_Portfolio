@@ -77,8 +77,8 @@ export default function Navigation() {
 
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <a
-            href="/Aashir_Noman_Resume.pdf"
-            download="Aashir_Noman_Resume.pdf"
+            href="/Aashir_Noman_Resume_2026.pdf"
+            download="Aashir_Noman_Resume_2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             style={{
