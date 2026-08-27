@@ -1,133 +1,152 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [typedRole, setTypedRole] = useState("");
-  const fullRole = "> SYSTEM.INIT: Applied AI Engineer | LLM & Agentic Systems Engineer_";
+  const [roll, setRoll] = useState("—");
 
   useEffect(() => {
-    setIsVisible(true);
-    let index = 0;
-    const timer = setInterval(() => {
-      setTypedRole(fullRole.substring(0, index));
-      index++;
-      if (index > fullRole.length) clearInterval(timer);
-    }, 40);
-    return () => clearInterval(timer);
+    setRoll(`AN/${new Date().getFullYear()}/${String(Math.floor(Math.random() * 900000) + 100000)}`);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background"
-    >
-      {/* Neo-Cyberpunk background elements */}
-      <div className="absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,transparent,black)] opacity-20" />
-      <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent" />
-
-      {/* Animated glowing orbs */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse delay-1000" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className={`text-center lg:text-left transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-primary/10 text-primary border border-primary/30 font-mono text-xs font-bold uppercase tracking-widest shadow-glow-cyan">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                SYSTEM STATUS: ACTIVE_
-              </span>
+    <div className="hero" style={{ padding: "64px 0 40px", overflowX: "hidden" }}>
+      <div className="wrap grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr] gap-10 md:gap-14 items-start">
+        <div>
+          <div className="label">AI / ML Engineer &middot; Agentic Systems &middot; Karachi</div>
+          <h1 style={{ fontSize: "clamp(40px, 6.8vw, 84px)", margin: "14px 0 20px" }}>
+            Aashir<br />
+            <em style={{ fontStyle: "normal", color: "var(--vermilion)" }}>Noman</em>
+          </h1>
+          <p className="kicker" style={{ maxWidth: "36rem", fontSize: 20 }}>
+            I build LLM systems that are allowed to touch real money, real patients, and real decisions &mdash;
+            retrieval that cites its sources, agents that respect a budget, and guardrails that fail the build before
+            a model gets a chance to fail in production.
+          </p>
+          <div className="est" style={{ marginTop: 26, display: "flex", gap: 26, flexWrap: "wrap" }}>
+            <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
+              <b style={{ display: "block", fontFamily: '"Archivo Black", sans-serif', fontSize: 22 }}>3+</b>
+              <span className="label">Years shipping LLMs</span>
             </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-foreground">
-              Aashir <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-glow">Noman</span>
-              <div className="text-xl sm:text-2xl lg:text-3xl mt-4 font-mono text-accent min-h-[4rem]">
-                {typedRole}
-              </div>
-            </h1>
-
-            <div className="p-4 border-l-2 border-primary bg-primary/5 mb-8 max-w-2xl text-left" data-testid="text-hero-description">
-              <p className="font-mono text-sm leading-relaxed text-muted-foreground">
-                <span className="text-primary">{`{ `}</span>
-                "role": "Applied AI Engineer",
-                <br />
-                "specialization": ["LLMs", "Autonomous Agents", "RAG Systems"],
-                <br />
-                "mission": "Deliver scalable AI solutions for automated decision-making."
-                <span className="text-primary">{` }`}</span>
-              </p>
+            <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
+              <b style={{ display: "block", fontFamily: '"Archivo Black", sans-serif', fontSize: 22 }}>6</b>
+              <span className="label">Systems in the open</span>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button
-                onClick={() => scrollToSection('projects')}
-                className="inline-flex items-center"
-                data-testid="button-view-work"
-              >
-                View My Work <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => scrollToSection('contact')}
-                className="inline-flex items-center"
-                data-testid="button-lets-connect"
-              >
-                Let's Connect <MessageCircle className="ml-2 h-4 w-4" />
-              </Button>
+            <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
+              <b style={{ display: "block", fontFamily: '"Archivo Black", sans-serif', fontSize: 22 }}>820</b>
+              <span className="label">Tests between them</span>
             </div>
-
-            <div className="flex items-center justify-center lg:justify-start space-x-6">
-              <div className="text-center" data-testid="stat-experience">
-                <div className="text-2xl font-bold text-primary">3+</div>
-                <div className="text-sm text-muted-foreground">Years XP</div>
-              </div>
-              <div className="text-center" data-testid="stat-projects">
-                <div className="text-2xl font-bold text-primary">27+</div>
-                <div className="text-sm text-muted-foreground">Projects</div>
-              </div>
-              <div className="text-center" data-testid="stat-clients">
-                <div className="text-2xl font-bold text-primary">5⭐</div>
-                <div className="text-sm text-muted-foreground">Rating</div>
-              </div>
+            <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
+              <b style={{ display: "block", fontFamily: '"Archivo Black", sans-serif', fontSize: 22 }}>5&#9733;</b>
+              <span className="label">Upwork, kept</span>
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end relative">
-            <div className="relative animate-float z-20">
-              {/* Neo-Cyberpunk hexagon/tech container */}
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full bg-card/80 backdrop-blur-md border-2 border-primary shadow-glow-cyan overflow-hidden group">
-                <img
-                  src="/profile_pic.jpeg"
-                  alt="Aashir Noman - Applied AI Engineer headshot"
-                  className="w-full h-full rounded-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                  data-testid="img-headshot"
-                />
-                {/* Tech overlay grid line */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px] mix-blend-overlay pointer-events-none" />
-                <div className="absolute inset-0 rounded-full border-4 border-accent/20 scale-[1.05] group-hover:scale-100 transition-transform duration-500" />
-              </div>
+          <div style={{ display: "flex", gap: 14, marginTop: 32, flexWrap: "wrap" }}>
+            <a
+              href="#projects"
+              style={{
+                fontFamily: '"Courier Prime", monospace',
+                fontSize: 13,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                background: "var(--ink)",
+                color: "var(--stock)",
+                padding: "12px 22px",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              See the work
+            </a>
+            <a
+              href="#contact"
+              style={{
+                fontFamily: '"Courier Prime", monospace',
+                fontSize: 13,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                background: "transparent",
+                color: "var(--ink)",
+                border: "1.5px solid var(--ink)",
+                padding: "12px 22px",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              Work with me
+            </a>
+          </div>
+        </div>
 
-              {/* Floating tech nodes */}
-              <div className="absolute -top-4 -right-4 px-3 py-1 bg-black/80 border border-primary text-primary font-mono text-xs rounded-sm shadow-glow-cyan animate-bounce backdrop-blur-sm">
-                [AGENT_01_READY]
-              </div>
-              <div className="absolute -bottom-2 -left-6 px-3 py-1 bg-black/80 border border-accent text-accent font-mono text-xs rounded-sm shadow-glow-purple animate-bounce delay-300 backdrop-blur-sm">
-                LLM_CORE_ONLINE
-              </div>
+        <div style={{ position: "relative", justifySelf: "center", width: "100%", maxWidth: 360 }}>
+          <div
+            className="card"
+            style={{
+              background: "#F2F3EC",
+              border: "1.5px solid var(--ink)",
+              padding: 18,
+              position: "relative",
+              transform: "rotate(-1.4deg)",
+              boxShadow: "6px 7px 0 rgba(27, 42, 44, 0.16)",
+            }}
+          >
+            <div style={{ position: "absolute", inset: 6, border: "1px dashed var(--rule)", pointerEvents: "none" }} />
+            <div style={{ borderBottom: "2px solid var(--ink)", paddingBottom: 10, marginBottom: 14, display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+              <div style={{ fontFamily: '"Archivo Black", sans-serif', fontSize: 13 }}>OPERATOR FILE</div>
+              <div className="label">Form AI/01</div>
+            </div>
+
+            <div style={{ position: "relative", marginBottom: 16 }}>
+              <img
+                src="/profile_pic.jpeg"
+                alt="Aashir Noman, AI / ML Engineer"
+                style={{
+                  width: "100%",
+                  aspectRatio: "4 / 5",
+                  objectFit: "cover",
+                  objectPosition: "top center",
+                  display: "block",
+                  border: "1px solid var(--ink)",
+                  filter: "grayscale(15%) contrast(1.02)",
+                }}
+                data-testid="img-headshot"
+              />
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "76px 1fr", gap: 8, alignItems: "end", marginBottom: 8 }}>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", opacity: 0.7, paddingBottom: 3 }}>Name</div>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: 14, borderBottom: "1px solid var(--rule)", paddingBottom: 3, color: "var(--violet)" }}>Aashir Noman</div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "76px 1fr", gap: 8, alignItems: "end", marginBottom: 8 }}>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", opacity: 0.7, paddingBottom: 3 }}>Role</div>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: 14, borderBottom: "1px solid var(--rule)", paddingBottom: 3, color: "var(--violet)" }}>AI / ML Engineer</div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "76px 1fr", gap: 8, alignItems: "end", marginBottom: 8 }}>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", opacity: 0.7, paddingBottom: 3 }}>Focus</div>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: 14, borderBottom: "1px solid var(--rule)", paddingBottom: 3, color: "var(--violet)" }}>LLM &middot; Agents &middot; RAG</div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "76px 1fr", gap: 8, alignItems: "end", marginBottom: 8 }}>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", opacity: 0.7, paddingBottom: 3 }}>File No.</div>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: 14, borderBottom: "1px solid var(--rule)", paddingBottom: 3, color: "var(--violet)" }}>{roll}</div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "76px 1fr", gap: 8, alignItems: "end" }}>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", opacity: 0.7, paddingBottom: 3 }}>Status</div>
+              <div style={{ fontFamily: '"Courier Prime", monospace', fontSize: 14, borderBottom: "1px solid var(--rule)", paddingBottom: 3, color: "var(--vermilion)" }}>Open to remote AI/ML roles</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <div className="wrap">
+        <div className="notice">
+          <div className="label">Working note</div>
+          <p>
+            Most of my work is the part that is not the prompt: deterministic fallbacks, tiered autonomy limits,
+            injection boundaries, human approval gates, and evaluation harnesses that fail the build before it ships.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

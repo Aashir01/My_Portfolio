@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, MapPin, Coffee, Github, Linkedin, Download, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -10,213 +9,164 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
-    message: ""
+    message: "",
   });
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement actual form submission to backend
     toast({
-      title: "Message Sent!",
-      description: "Thank you for your message! I'll get back to you soon.",
+      title: "Message sent",
+      description: "Thanks for reaching out. I'll get back to you shortly.",
     });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section id="contact" className="py-20 bg-background relative overflow-hidden border-y border-white/5">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:30px_30px] opacity-20" />
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
-      <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
+    <section id="contact" style={{ padding: "74px 0", borderTop: "1px solid var(--rule)", background: "var(--ink)", color: "var(--stock)" }}>
+      <div className="wrap">
+        <div className="sec-head">
+          <h2 style={{ color: "var(--stock)" }}>Work with me</h2>
+          <div className="label" style={{ color: "var(--stock)" }}>Open to remote AI/ML roles</div>
+        </div>
+        <p className="lede" style={{ color: "var(--stock)", opacity: 0.9 }}>
+          I am open to remote AI / ML engineering roles and long-term consulting engagements &mdash; especially where an
+          LLM system has to be trusted with something consequential: agent orchestration, retrieval over proprietary
+          corpora, guardrails and approval workflows, or evaluation infrastructure for a team shipping fast.
+        </p>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-primary/10 text-primary border border-primary/30 font-mono text-xs font-bold uppercase tracking-widest mb-6 shadow-glow-cyan">
-            <span className="w-2 h-2 bg-primary animate-pulse"></span>
-            INITIATE_CONNECTION
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground tracking-tight">
-            Secure <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-glow">Channel</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-mono text-sm tracking-wide">
-            I welcome opportunities to collaborate on innovative projects and strategic initiatives.
-            Let's explore how we can work together to achieve your business objectives.
-          </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7" style={{ marginBottom: 52 }}>
+          {[
+            ["01 — Describe", "Send the problem in plain language. A dataset, a workflow, a bottleneck — no jargon needed."],
+            ["02 — Agree", "We settle scope, stack, and success criteria before any code is written."],
+            ["03 — Build", "A working system, deployed and documented, with the honest trade-offs written down."],
+            ["04 — Hand over", "You get the code, the model, and the record. Nothing is held back behind a retainer."],
+          ].map(([step, body]) => (
+            <div key={step} style={{ borderTop: "2px solid var(--vermilion)", paddingTop: 12 }}>
+              <b style={{ display: "block", fontFamily: '"Courier Prime", monospace', fontSize: 12, letterSpacing: "0.14em", color: "var(--vermilion)", marginBottom: 6 }}>
+                {step}
+              </b>
+              <p style={{ margin: 0, fontSize: "16.5px", lineHeight: 1.5, opacity: 0.9 }}>{body}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Info */}
-          <div className="space-y-6 flex flex-col justify-center">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4 p-4 bg-black/40 backdrop-blur-md rounded-sm border border-primary/20 hover:border-primary hover:shadow-glow-cyan transition-all duration-300 group" data-testid="contact-email">
-                <div className="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center border border-primary/30 group-hover:bg-primary/20 transition-colors">
-                  <Mail className="h-6 w-6 text-primary group-hover:text-glow" />
-                </div>
-                <div>
-                  <h3 className="font-mono text-xs text-muted-foreground tracking-widest uppercase">Email Protocol</h3>
-                  <p className="text-foreground font-mono mt-1 group-hover:text-primary transition-colors">azac965@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 p-4 bg-black/40 backdrop-blur-md rounded-sm border border-accent/20 hover:border-accent hover:shadow-glow-purple transition-all duration-300 group" data-testid="contact-location">
-                <div className="w-12 h-12 bg-accent/10 rounded-sm flex items-center justify-center border border-accent/30 group-hover:bg-accent/20 transition-colors">
-                  <MapPin className="h-6 w-6 text-accent group-hover:drop-shadow-[0_0_8px_rgba(138,43,226,0.8)]" />
-                </div>
-                <div>
-                  <h3 className="font-mono text-xs text-muted-foreground tracking-widest uppercase">Node Location</h3>
-                  <p className="text-foreground font-mono mt-1 group-hover:text-accent transition-colors">Karachi, Pakistan | Global Remote</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 p-4 bg-black/40 backdrop-blur-md rounded-sm border border-primary/20 hover:border-primary hover:shadow-glow-cyan transition-all duration-300 group" data-testid="contact-coffee">
-                <div className="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center border border-primary/30 group-hover:bg-primary/20 transition-colors">
-                  <Coffee className="h-6 w-6 text-primary group-hover:text-glow" />
-                </div>
-                <div>
-                  <h3 className="font-mono text-xs text-muted-foreground tracking-widest uppercase">Direct Comms</h3>
-                  <p className="text-foreground font-mono mt-1 group-hover:text-primary transition-colors text-sm">WhatsApp: +923401807019</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 p-4 bg-black/40 backdrop-blur-md rounded-sm border border-accent/20 hover:border-accent hover:shadow-glow-purple transition-all duration-300 group" data-testid="contact-cv">
-                <div className="w-12 h-12 bg-accent/10 rounded-sm flex items-center justify-center border border-accent/30 group-hover:bg-accent/20 transition-colors">
-                  <Download className="h-6 w-6 text-accent group-hover:drop-shadow-[0_0_8px_rgba(138,43,226,0.8)]" />
-                </div>
-                <div>
-                  <h3 className="font-mono text-xs text-muted-foreground tracking-widest uppercase">System Specs</h3>
-                  <a
-                    href="/Aashir_Noman_Resume.pdf"
-                    download="Aashir_Noman_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground font-mono mt-1 hover:text-accent transition-colors inline-flex items-center"
-                  >
-                    Download_CV.pdf
-                  </a>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <div>
+              <h3 style={{ fontSize: 17, margin: "0 0 14px", color: "var(--stock)" }}>Direct lines</h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <a href="mailto:azac965@gmail.com" style={{ fontFamily: '"Courier Prime", monospace', fontSize: 14, color: "var(--stock)", textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }} data-testid="contact-email">
+                  <Mail className="h-4 w-4" style={{ color: "var(--vermilion)" }} /> azac965@gmail.com
+                </a>
+                <span style={{ fontFamily: '"Courier Prime", monospace', fontSize: 14, color: "var(--stock)", display: "flex", alignItems: "center", gap: 10 }} data-testid="contact-location">
+                  <MapPin className="h-4 w-4" style={{ color: "var(--vermilion)" }} /> Karachi, Pakistan &middot; Remote worldwide
+                </span>
+                <a href="https://wa.me/923401807019" target="_blank" rel="noopener noreferrer" style={{ fontFamily: '"Courier Prime", monospace', fontSize: 14, color: "var(--stock)", textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }} data-testid="contact-whatsapp">
+                  <MessageCircle className="h-4 w-4" style={{ color: "var(--vermilion)" }} /> +92 340 180 7019
+                </a>
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="pt-8 border-t border-white/5">
-              <h3 className="font-mono text-xs text-muted-foreground tracking-widest uppercase mb-4">External Connections</h3>
-              <div className="flex space-x-4">
-                <a
-                  href="https://upwork.com/freelancers/aashir1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-black/60 border border-primary/30 rounded-sm flex items-center justify-center text-primary hover:bg-primary hover:text-black hover:shadow-glow-cyan transition-all duration-300 group"
-                  data-testid="social-upwork"
-                >
-                  <span className="text-lg font-mono font-bold">U</span>
+            <div>
+              <h3 style={{ fontSize: 17, margin: "0 0 14px", color: "var(--stock)" }}>Elsewhere</h3>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
+                <a href="https://github.com/Aashir01" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: '"Courier Prime", monospace', fontSize: 13, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--stock)", textDecoration: "none", borderBottom: "1px solid var(--vermilion)" }} data-testid="social-github">
+                  <Github className="h-4 w-4" /> GitHub
                 </a>
-                <a
-                  href="https://linkedin.com/in/aashir-noman-138820152"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-black/60 border border-accent/30 rounded-sm flex items-center justify-center text-accent hover:bg-accent hover:text-black hover:shadow-glow-purple transition-all duration-300 group"
-                  data-testid="social-linkedin"
-                >
-                  <Linkedin className="h-5 w-5" />
+                <a href="https://linkedin.com/in/aashir-noman-138820152" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: '"Courier Prime", monospace', fontSize: 13, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--stock)", textDecoration: "none", borderBottom: "1px solid var(--vermilion)" }} data-testid="social-linkedin">
+                  <Linkedin className="h-4 w-4" /> LinkedIn
                 </a>
-                <a
-                  href="https://github.com/Aashir01"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-black/60 border border-primary/30 rounded-sm flex items-center justify-center text-primary hover:bg-primary hover:text-black hover:shadow-glow-cyan transition-all duration-300 group"
-                  data-testid="social-github"
-                >
-                  <Github className="h-5 w-5" />
+                <a href="https://upwork.com/freelancers/aashir1" target="_blank" rel="noopener noreferrer" style={{ fontFamily: '"Courier Prime", monospace', fontSize: 13, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--stock)", textDecoration: "none", borderBottom: "1px solid var(--vermilion)" }} data-testid="social-upwork">
+                  Upwork
                 </a>
-                <a
-                  href="https://wa.me/923401807019"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-black/60 border border-accent/30 rounded-sm flex items-center justify-center text-accent hover:bg-accent hover:text-black hover:shadow-glow-purple transition-all duration-300 group"
-                  data-testid="social-whatsapp"
-                >
-                  <MessageCircle className="h-5 w-5" />
+                <a href="https://twitter.com/Aashir002" target="_blank" rel="noopener noreferrer" style={{ fontFamily: '"Courier Prime", monospace', fontSize: 13, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--stock)", textDecoration: "none", borderBottom: "1px solid var(--vermilion)" }}>
+                  X / Twitter
+                </a>
+                <a href="https://orcid.org/0009-0004-2126-5419" target="_blank" rel="noopener noreferrer" style={{ fontFamily: '"Courier Prime", monospace', fontSize: 13, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--stock)", textDecoration: "none", borderBottom: "1px solid var(--vermilion)" }}>
+                  ORCID
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-card border border-border rounded-xl p-8">
-            <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
-            <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="name" className="block text-sm font-medium mb-2">Name</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    data-testid="input-name"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="email" className="block text-sm font-medium mb-2">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    data-testid="input-email"
-                  />
-                </div>
-              </div>
-
+          <div style={{ background: "var(--card)", color: "var(--ink)", border: "1.5px solid var(--ink)", padding: 28, boxShadow: "6px 7px 0 rgba(0,0,0,0.16)" }}>
+            <h3 style={{ fontSize: 22, margin: "0 0 18px" }}>Start the conversation</h3>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 18 }} data-testid="contact-form">
               <div>
-                <Label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</Label>
+                <Label htmlFor="name" style={{ fontFamily: '"Courier Prime", monospace', fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
+                  Name
+                </Label>
                 <Input
-                  id="subject"
-                  name="subject"
+                  id="name"
+                  name="name"
                   type="text"
-                  placeholder="What's this about?"
-                  value={formData.subject}
+                  placeholder="Who is asking"
+                  value={formData.name}
                   onChange={handleInputChange}
                   required
-                  data-testid="input-subject"
+                  data-testid="input-name"
                 />
               </div>
-
               <div>
-                <Label htmlFor="message" className="block text-sm font-medium mb-2">Message</Label>
+                <Label htmlFor="email" style={{ fontFamily: '"Courier Prime", monospace', fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  data-testid="input-email"
+                />
+              </div>
+              <div>
+                <Label htmlFor="message" style={{ fontFamily: '"Courier Prime", monospace', fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
+                  Message
+                </Label>
                 <Textarea
                   id="message"
                   name="message"
                   rows={5}
-                  placeholder="Describe your project requirements or business objectives..."
+                  placeholder="Describe the problem, the data, or the workflow."
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="resize-none"
+                  style={{ resize: "none" }}
                   data-testid="textarea-message"
                 />
               </div>
-
-              <Button type="submit" className="w-full" data-testid="button-send-message">
-                Send Message <Mail className="ml-2 h-4 w-4" />
-              </Button>
+              <button
+                type="submit"
+                style={{
+                  fontFamily: '"Courier Prime", monospace',
+                  fontSize: 13,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  background: "var(--ink)",
+                  color: "var(--stock)",
+                  border: "none",
+                  padding: "14px 22px",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 8,
+                }}
+                data-testid="button-send-message"
+              >
+                Send message <Mail className="h-4 w-4" />
+              </button>
             </form>
           </div>
         </div>

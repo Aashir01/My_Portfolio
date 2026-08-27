@@ -1,106 +1,105 @@
-import { Button } from "@/components/ui/button";
-import { useTheme } from "@/components/theme-provider";
-import { Moon, Sun, Download } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Download } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
-  const { theme, setTheme } = useTheme();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [current, setCurrent] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const sections = ["home", "about", "skills", "experience", "projects", "certifications", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCurrent(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-white/20 dark:border-white/10 shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <div className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              AI Engineer
-            </div>
-          </div>
-          
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="text-foreground hover:text-primary transition-colors"
-                data-testid="nav-home"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-foreground hover:text-primary transition-colors"
-                data-testid="nav-about"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('skills')}
-                className="text-foreground hover:text-primary transition-colors"
-                data-testid="nav-skills"
-              >
-                Skills
-              </button>
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="text-foreground hover:text-primary transition-colors"
-                data-testid="nav-projects"
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-foreground hover:text-primary transition-colors"
-                data-testid="nav-contact"
-              >
-                Contact
-              </button>
-            </div>
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-lg"
-              data-testid="button-theme-toggle"
+    <header className="masthead" style={{ borderBottom: "1px solid var(--rule)", position: "sticky", top: 0, zIndex: 50, background: "var(--stock)" }}>
+      <div className="wrap" style={{ display: "flex", alignItems: "center", gap: 20, minHeight: 56, flexWrap: "wrap", paddingTop: 8, paddingBottom: 8 }}>
+        <a
+          href="#home"
+          className="crest"
+          onClick={(e) => { e.preventDefault(); scrollToSection("home"); }}
+        >
+          Aashir<span>Noman</span>
+        </a>
+
+        <nav style={{ marginLeft: "auto", display: "flex", gap: 20, flexWrap: "wrap" }} className="mono">
+          {[
+            ["about", "About"],
+            ["skills", "Skills"],
+            ["experience", "Experience"],
+            ["projects", "Projects"],
+            ["contact", "Contact"],
+          ].map(([id, label]) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              aria-current={current === id ? "page" : undefined}
+              style={{
+                fontFamily: '"Courier Prime", monospace',
+                fontSize: 12,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                padding: "3px 0",
+                border: "none",
+                background: "none",
+                cursor: "pointer",
+                color: "inherit",
+                borderBottom: current === id ? "1px solid var(--ink)" : "1px solid transparent",
+              }}
+              data-testid={`nav-${id}`}
             >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-            <Button 
-              className="hidden sm:inline-flex" 
-              data-testid="button-download-cv"
-              asChild
-            >
-              <a 
-                href="/Aashir_Noman_Resume.pdf" 
-                download="Aashir_Noman_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download CV <Download className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </div>
+              {label}
+            </button>
+          ))}
+        </nav>
+
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <a
+            href="/Aashir_Noman_Resume.pdf"
+            download="Aashir_Noman_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: '"Courier Prime", monospace',
+              fontSize: 12,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "var(--stock)",
+              background: "var(--ink)",
+              padding: "8px 14px",
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+            data-testid="button-download-cv"
+          >
+            Download CV <Download className="h-4 w-4" />
+          </a>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

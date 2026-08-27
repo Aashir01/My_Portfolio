@@ -66,6 +66,7 @@ export default {
         sans: ["var(--font-sans)"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
+        display: ["var(--font-display)"],
       },
       keyframes: {
         "accordion-down": {
@@ -104,8 +105,7 @@ export default {
         },
       },
       boxShadow: {
-        'glow-cyan': '0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.1)',
-        'glow-purple': '0 0 15px rgba(138, 43, 226, 0.3), inset 0 0 10px rgba(138, 43, 226, 0.1)',
+        'hard': '6px 7px 0 rgba(27, 42, 44, 0.16)',
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
