@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Container port with gantry cranes, stacked containers and an autonomous routing arc">
+  <defs>
+    <pattern id="mDots" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.15" fill="#1B2A2C" opacity="0.24"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="420" fill="#D6DACD"/>
+  <rect width="800" height="420" fill="url(#mDots)"/>
+
+  <!-- misregistered sky block -->
+  <rect x="52" y="44" width="700" height="132" fill="#BE3A2B" opacity="0.14"/>
+  <rect x="46" y="38" width="700" height="132" fill="none" stroke="#1B2A2C" stroke-width="2"/>
+
+  <!-- routing arc -->
+  <path d="M62 132 C 200 54, 340 178, 470 96 S 690 76, 750 118" fill="none" stroke="#4B3F8F" stroke-width="4" stroke-dasharray="14 9"/>
+  <circle cx="62" cy="132" r="9" fill="#4B3F8F"/>
+  <circle cx="470" cy="96" r="9" fill="#D6DACD" stroke="#4B3F8F" stroke-width="4"/>
+  <path d="M730 100 L756 118 L730 136 Z" fill="#BE3A2B"/>
+
+  <!-- gantry crane, left -->
+  <g stroke="#1B2A2C" stroke-width="7" fill="none" stroke-linecap="square">
+    <path d="M140 288 V196 M250 288 V196"/>
+    <path d="M118 196 H322"/>
+    <path d="M195 196 V148 M195 148 L124 194 M195 148 L318 194"/>
+  </g>
+  <rect x="176" y="196" width="30" height="20" fill="#1B2A2C"/>
+  <path d="M191 216 V240" stroke="#1B2A2C" stroke-width="3"/>
+  <rect x="160" y="240" width="62" height="22" fill="#4B3F8F" stroke="#1B2A2C" stroke-width="3"/>
+
+  <!-- gantry crane, right -->
+  <g stroke="#1B2A2C" stroke-width="7" fill="none" stroke-linecap="square">
+    <path d="M470 288 V176 M580 288 V176"/>
+    <path d="M448 176 H652"/>
+    <path d="M525 176 V126 M525 126 L454 174 M525 126 L648 174"/>
+  </g>
+  <rect x="506" y="176" width="30" height="20" fill="#1B2A2C"/>
+  <path d="M521 196 V222" stroke="#1B2A2C" stroke-width="3"/>
+  <rect x="490" y="222" width="62" height="22" fill="#BE3A2B" stroke="#1B2A2C" stroke-width="3"/>
+
+  <!-- container yard -->
+  <g stroke="#1B2A2C" stroke-width="3">
+    <rect x="72" y="296" width="112" height="30" fill="#BE3A2B"/>
+    <rect x="72" y="266" width="112" height="30" fill="#D6DACD"/>
+    <rect x="192" y="296" width="112" height="30" fill="#D6DACD"/>
+    <rect x="312" y="296" width="112" height="30" fill="#4B3F8F"/>
+    <rect x="312" y="266" width="112" height="30" fill="#D6DACD"/>
+    <rect x="312" y="236" width="112" height="30" fill="#BE3A2B"/>
+    <rect x="432" y="296" width="112" height="30" fill="#D6DACD"/>
+    <rect x="552" y="296" width="112" height="30" fill="#4B3F8F"/>
+    <rect x="552" y="266" width="112" height="30" fill="#D6DACD"/>
+    <rect x="672" y="296" width="56" height="30" fill="#D6DACD"/>
+  </g>
+  <g stroke="#1B2A2C" stroke-width="2" opacity="0.45">
+    <path d="M100 296 v30 M128 296 v30 M156 296 v30 M220 296 v30 M248 296 v30 M276 296 v30
+             M340 296 v30 M368 296 v30 M396 296 v30 M460 296 v30 M488 296 v30 M516 296 v30
+             M580 296 v30 M608 296 v30 M636 296 v30 M700 296 v30
+             M100 266 v30 M128 266 v30 M156 266 v30 M340 266 v30 M368 266 v30 M396 266 v30
+             M580 266 v30 M608 266 v30 M636 266 v30 M340 236 v30 M368 236 v30 M396 236 v30"/>
+  </g>
+
+  <!-- quay -->
+  <path d="M46 340 H754" stroke="#1B2A2C" stroke-width="6"/>
+  <path d="M46 358 H754 M46 374 H560" stroke="#1B2A2C" stroke-width="2" opacity="0.4"/>
+</svg>

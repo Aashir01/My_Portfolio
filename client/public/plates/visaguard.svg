@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Passport and application documents under inspection with an approval stamp">
+  <defs>
+    <pattern id="vDots" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.15" fill="#1B2A2C" opacity="0.24"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="420" fill="#D6DACD"/>
+  <rect width="800" height="420" fill="url(#vDots)"/>
+
+  <!-- back sheets -->
+  <g stroke="#1B2A2C" stroke-width="3" fill="#D6DACD">
+    <rect x="96" y="70" width="300" height="290" transform="rotate(-6 246 215)"/>
+    <rect x="118" y="60" width="300" height="290" transform="rotate(3 268 205)"/>
+  </g>
+
+  <!-- passport / main document -->
+  <rect x="128" y="56" width="300" height="296" fill="#4B3F8F" opacity="0.16"/>
+  <rect x="120" y="48" width="300" height="296" fill="#D6DACD" stroke="#1B2A2C" stroke-width="4"/>
+  <rect x="148" y="80" width="86" height="104" fill="#1B2A2C" opacity="0.86"/>
+  <circle cx="191" cy="118" r="19" fill="#D6DACD"/>
+  <path d="M162 172 c8-26 50-26 58 0 z" fill="#D6DACD"/>
+  <g stroke="#1B2A2C" stroke-width="6" stroke-linecap="square">
+    <path d="M254 92 H392 M254 118 H360 M254 144 H392 M254 170 H336"/>
+  </g>
+  <g stroke="#1B2A2C" stroke-width="4" opacity="0.5">
+    <path d="M148 214 H392 M148 240 H392 M148 266 H330"/>
+  </g>
+  <rect x="148" y="298" width="244" height="26" fill="#1B2A2C" opacity="0.85"/>
+  <g stroke="#D6DACD" stroke-width="4">
+    <path d="M158 298 v26 M172 298 v26 M190 298 v26 M204 298 v26 M226 298 v26 M244 298 v26 M262 298 v26 M284 298 v26 M300 298 v26 M320 298 v26 M340 298 v26 M362 298 v26"/>
+  </g>
+
+  <!-- checklist panel -->
+  <rect x="476" y="72" width="252" height="248" fill="#D6DACD" stroke="#1B2A2C" stroke-width="4"/>
+  <g>
+    <rect x="504" y="104" width="28" height="28" fill="none" stroke="#1B2A2C" stroke-width="4"/>
+    <path d="M509 118 l8 9 15-18" fill="none" stroke="#4B3F8F" stroke-width="6" stroke-linecap="square"/>
+    <path d="M548 118 H700" stroke="#1B2A2C" stroke-width="6"/>
+    <rect x="504" y="158" width="28" height="28" fill="none" stroke="#1B2A2C" stroke-width="4"/>
+    <path d="M509 172 l8 9 15-18" fill="none" stroke="#4B3F8F" stroke-width="6" stroke-linecap="square"/>
+    <path d="M548 172 H664" stroke="#1B2A2C" stroke-width="6"/>
+    <rect x="504" y="212" width="28" height="28" fill="none" stroke="#BE3A2B" stroke-width="4"/>
+    <path d="M509 217 l18 18 M527 217 l-18 18" stroke="#BE3A2B" stroke-width="6" stroke-linecap="square"/>
+    <path d="M548 226 H700" stroke="#BE3A2B" stroke-width="6"/>
+    <rect x="504" y="266" width="28" height="28" fill="none" stroke="#1B2A2C" stroke-width="4"/>
+    <path d="M509 280 l8 9 15-18" fill="none" stroke="#4B3F8F" stroke-width="6" stroke-linecap="square"/>
+    <path d="M548 280 H676" stroke="#1B2A2C" stroke-width="6"/>
+  </g>
+
+  <!-- stamp -->
+  <g transform="rotate(-14 452 350)">
+    <circle cx="452" cy="350" r="58" fill="none" stroke="#BE3A2B" stroke-width="7"/>
+    <circle cx="452" cy="350" r="47" fill="none" stroke="#BE3A2B" stroke-width="3"/>
+    <path d="M425 350 l18 20 36-42" fill="none" stroke="#BE3A2B" stroke-width="9" stroke-linecap="square"/>
+  </g>
+</svg>

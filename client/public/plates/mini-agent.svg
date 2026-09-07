@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Terminal window showing a coding agent applying an exact-match diff">
+  <defs>
+    <pattern id="cDots" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.15" fill="#1B2A2C" opacity="0.24"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="420" fill="#D6DACD"/>
+  <rect width="800" height="420" fill="url(#cDots)"/>
+
+  <!-- misregistration shadow -->
+  <rect x="70" y="60" width="668" height="308" fill="#4B3F8F" opacity="0.16"/>
+  <rect x="62" y="52" width="668" height="308" fill="#D6DACD" stroke="#1B2A2C" stroke-width="4"/>
+
+  <!-- title bar -->
+  <rect x="62" y="52" width="668" height="42" fill="#1B2A2C"/>
+  <g fill="#D6DACD">
+    <circle cx="90" cy="73" r="7"/><circle cx="114" cy="73" r="7"/><circle cx="138" cy="73" r="7"/>
+  </g>
+  <text x="396" y="80" text-anchor="middle" font-family="'Courier Prime',monospace" font-size="16" letter-spacing="3" fill="#D6DACD">mini-agent &#8212; apply_patch</text>
+
+  <!-- prompt lines -->
+  <g font-family="'Courier Prime',monospace" font-size="19" fill="#1B2A2C">
+    <text x="92" y="134">&#8250; edit src/apply.ts</text>
+  </g>
+  <g stroke="#1B2A2C" stroke-width="6" opacity="0.35" stroke-linecap="square">
+    <path d="M92 158 H392"/>
+  </g>
+
+  <!-- diff block -->
+  <rect x="92" y="176" width="608" height="44" fill="#BE3A2B" opacity="0.16"/>
+  <text x="108" y="206" font-family="'Courier Prime',monospace" font-size="22" fill="#BE3A2B">&#8722;</text>
+  <g stroke="#BE3A2B" stroke-width="7" stroke-linecap="square"><path d="M140 198 H556"/></g>
+
+  <rect x="92" y="228" width="608" height="44" fill="#4B3F8F" opacity="0.16"/>
+  <text x="108" y="258" font-family="'Courier Prime',monospace" font-size="22" fill="#4B3F8F">+</text>
+  <g stroke="#4B3F8F" stroke-width="7" stroke-linecap="square"><path d="M140 250 H612"/></g>
+
+  <rect x="92" y="280" width="608" height="44" fill="#4B3F8F" opacity="0.16"/>
+  <text x="108" y="310" font-family="'Courier Prime',monospace" font-size="22" fill="#4B3F8F">+</text>
+  <g stroke="#4B3F8F" stroke-width="7" stroke-linecap="square"><path d="M140 302 H500"/></g>
+
+  <!-- match counter + cursor -->
+  <text x="700" y="344" text-anchor="end" font-family="'Courier Prime',monospace" font-size="15" letter-spacing="2" fill="#1B2A2C" opacity="0.72">MATCHES: 1</text>
+  <rect x="524" y="330" width="16" height="24" fill="#1B2A2C"/>
+</svg>
