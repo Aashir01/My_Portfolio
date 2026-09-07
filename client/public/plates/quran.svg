@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Manuscript page with geometric star panel and exact verse citations">
+  <defs>
+    <pattern id="qDots" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.15" fill="#1B2A2C" opacity="0.24"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="420" fill="#D6DACD"/>
+  <rect width="800" height="420" fill="url(#qDots)"/>
+
+  <!-- illuminated frame -->
+  <rect x="54" y="46" width="692" height="328" fill="none" stroke="#1B2A2C" stroke-width="4"/>
+  <rect x="68" y="60" width="664" height="300" fill="none" stroke="#4B3F8F" stroke-width="2"/>
+
+  <!-- eight-point star panel (left) -->
+  <g transform="translate(196 210)">
+    <g stroke="#4B3F8F" stroke-width="4" fill="none">
+      <rect x="-72" y="-72" width="144" height="144"/>
+      <rect x="-72" y="-72" width="144" height="144" transform="rotate(45)"/>
+      <rect x="-46" y="-46" width="92" height="92" transform="rotate(22.5)"/>
+      <rect x="-46" y="-46" width="92" height="92" transform="rotate(67.5)"/>
+    </g>
+    <g stroke="#BE3A2B" stroke-width="4" fill="none">
+      <circle r="26"/>
+      <circle r="102" stroke-dasharray="6 10"/>
+    </g>
+    <circle r="8" fill="#BE3A2B"/>
+  </g>
+
+  <!-- text block (right), right-aligned lines -->
+  <g stroke="#1B2A2C" stroke-width="7" stroke-linecap="round">
+    <path d="M700 108 H396 M700 146 H424 M700 184 H380 M700 222 H448"/>
+  </g>
+  <g stroke="#1B2A2C" stroke-width="7" stroke-linecap="round" opacity="0.42">
+    <path d="M700 260 H408 M700 298 H466"/>
+  </g>
+
+  <!-- ayah markers -->
+  <g fill="none" stroke="#BE3A2B" stroke-width="3">
+    <circle cx="368" cy="108" r="11"/><circle cx="396" cy="146" r="11"/><circle cx="352" cy="184" r="11"/><circle cx="420" cy="222" r="11"/>
+  </g>
+
+  <!-- citation slug -->
+  <rect x="368" y="316" width="332" height="34" fill="#1B2A2C"/>
+  <text x="534" y="340" text-anchor="middle" font-family="'Courier Prime',monospace" font-size="16" letter-spacing="3" fill="#D6DACD">6,236 AYAT &#183; 1,651 ROOTS</text>
+</svg>

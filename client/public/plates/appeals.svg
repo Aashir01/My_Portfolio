@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="A denied insurance letter passing through three review gates into a signed appeal">
+  <defs>
+    <pattern id="aDots" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.15" fill="#1B2A2C" opacity="0.24"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="420" fill="#D6DACD"/>
+  <rect width="800" height="420" fill="url(#aDots)"/>
+
+  <!-- denial letter -->
+  <rect x="62" y="82" width="212" height="268" fill="#BE3A2B" opacity="0.14"/>
+  <rect x="54" y="74" width="212" height="268" fill="#D6DACD" stroke="#1B2A2C" stroke-width="4"/>
+  <g stroke="#1B2A2C" stroke-width="5" opacity="0.55">
+    <path d="M82 116 H206 M82 140 H238 M82 164 H196"/>
+    <path d="M82 250 H238 M82 274 H210 M82 298 H238"/>
+  </g>
+  <g transform="rotate(-9 160 204)">
+    <rect x="62" y="180" width="196" height="50" fill="#D6DACD"/>
+    <rect x="62" y="180" width="196" height="50" fill="none" stroke="#BE3A2B" stroke-width="6"/>
+    <text x="160" y="216" text-anchor="middle" font-family="'Archivo Black','Arial Black',Impact,sans-serif" font-size="30" letter-spacing="2" fill="#BE3A2B">DENIED</text>
+  </g>
+
+  <!-- three liability gates -->
+  <g>
+    <path d="M290 208 H330" stroke="#1B2A2C" stroke-width="5" stroke-dasharray="10 8"/>
+    <rect x="336" y="130" width="26" height="156" fill="#4B3F8F"/>
+    <path d="M368 208 H404" stroke="#1B2A2C" stroke-width="5" stroke-dasharray="10 8"/>
+    <rect x="410" y="130" width="26" height="156" fill="#4B3F8F"/>
+    <path d="M442 208 H478" stroke="#1B2A2C" stroke-width="5" stroke-dasharray="10 8"/>
+    <rect x="484" y="130" width="26" height="156" fill="#4B3F8F"/>
+    <path d="M516 208 H556" stroke="#1B2A2C" stroke-width="5" stroke-dasharray="10 8"/>
+    <path d="M544 194 L568 208 L544 222 Z" fill="#1B2A2C"/>
+  </g>
+  <g fill="#D6DACD">
+    <circle cx="349" cy="208" r="7"/><circle cx="423" cy="208" r="7"/><circle cx="497" cy="208" r="7"/>
+  </g>
+  <text x="423" y="322" text-anchor="middle" font-family="'Courier Prime',monospace" font-size="19" letter-spacing="3" fill="#1B2A2C" opacity="0.75">3 GATES</text>
+
+  <!-- signed appeal -->
+  <rect x="588" y="82" width="164" height="238" fill="#4B3F8F" opacity="0.14"/>
+  <rect x="580" y="74" width="164" height="238" fill="#D6DACD" stroke="#1B2A2C" stroke-width="4"/>
+  <g stroke="#1B2A2C" stroke-width="5" opacity="0.55">
+    <path d="M606 112 H718 M606 136 H690 M606 160 H718 M606 184 H676"/>
+  </g>
+  <path d="M606 246 c22-30 34 18 52-6 s30-26 52 2" fill="none" stroke="#4B3F8F" stroke-width="6" stroke-linecap="round"/>
+  <path d="M606 268 H718" stroke="#1B2A2C" stroke-width="3"/>
+  <text x="662" y="292" text-anchor="middle" font-family="'Courier Prime',monospace" font-size="14" letter-spacing="2" fill="#1B2A2C" opacity="0.7">LICENSED</text>
+</svg>

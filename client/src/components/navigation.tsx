@@ -5,7 +5,7 @@ export default function Navigation() {
   const [current, setCurrent] = useState("home");
 
   useEffect(() => {
-    const sections = ["home", "about", "skills", "experience", "projects", "certifications", "contact"];
+    const sections = ["home", "projects", "about", "skills", "experience", "certifications", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -45,10 +45,10 @@ export default function Navigation() {
 
         <nav style={{ marginLeft: "auto", display: "flex", gap: 20, flexWrap: "wrap" }} className="mono">
           {[
+            ["projects", "Work"],
             ["about", "About"],
             ["skills", "Skills"],
             ["experience", "Experience"],
-            ["projects", "Projects"],
             ["contact", "Contact"],
           ].map(([id, label]) => (
             <button
