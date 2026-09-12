@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function HeroSection() {
-  const [roll, setRoll] = useState("—");
+  const [roll, setRoll] = useState("AN/000000");
 
   useEffect(() => {
     setRoll(`AN/${new Date().getFullYear()}/${String(Math.floor(Math.random() * 900000) + 100000)}`);
@@ -17,27 +17,27 @@ export default function HeroSection() {
             <em style={{ fontStyle: "normal", color: "var(--vermilion)" }}>Noman</em>
           </h1>
           <p className="kicker" style={{ maxWidth: "36rem", fontSize: 20 }}>
-            I find the thing that is actually broken — lost documents, slow claims, signals that lie, processes held
-            together by phone calls — and I build the LLM system that removes it. Retrieval that cites its sources,
-            agents that respect a budget, and guardrails that fail the build before a model gets a chance to fail in
-            production.
+            I build LLM systems for problems that are costing somebody real money. Documents that go missing, claims
+            that sit unanswered for weeks, a trading signal that looks convincing right up until it loses money. The
+            interesting part is rarely the prompt. It's retrieval you can audit, agents that stop when they hit a
+            budget, and tests that catch a bad answer before a client does.
           </p>
           <div className="est" style={{ marginTop: 26, display: "flex", gap: 26, flexWrap: "wrap" }}>
             <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
               <b style={{ display: "block", fontFamily: '"Archivo Black", sans-serif', fontSize: 22 }}>3+</b>
-              <span className="label">Years shipping LLMs</span>
+              <span className="label">Years building LLM systems</span>
             </div>
             <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
               <b style={{ display: "block", fontFamily: '"Archivo Black", sans-serif', fontSize: 22 }}>6</b>
-              <span className="label">Systems in the open</span>
+              <span className="label">Systems on GitHub</span>
             </div>
             <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
               <b style={{ display: "block", fontFamily: '"Archivo Black", sans-serif', fontSize: 22 }}>820</b>
-              <span className="label">Tests between them</span>
+              <span className="label">Tests across them</span>
             </div>
             <div style={{ borderLeft: "2px solid var(--violet)", paddingLeft: 12 }}>
               <b style={{ display: "block", fontFamily: '"Archivo Black", sans-serif', fontSize: 22 }}>5&#9733;</b>
-              <span className="label">Upwork, kept</span>
+              <span className="label">Upwork rating</span>
             </div>
           </div>
 
@@ -143,9 +143,9 @@ export default function HeroSection() {
         <div className="notice">
           <div className="label">Working note</div>
           <p>
-            Most of my work is the part that is not the prompt: I diagnose the problem first, then build the
-            deterministic fallbacks, tiered autonomy limits, injection boundaries, human approval gates, and evaluation
-            harnesses that fail the build before it ships.
+            Most of my time goes on the parts nobody demos. Working out what is actually broken, then building the
+            fallbacks for when a provider is down, the limits on what an agent may decide alone, the approval step where
+            a human has to sign, and the evals that fail the build when quality slips.
           </p>
         </div>
       </div>

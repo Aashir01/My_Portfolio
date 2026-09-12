@@ -11,14 +11,14 @@ export default function Footer() {
               any current or former client, employer, or platform. It collects no data and sells nothing.
             </p>
             <p>
-              Every project here was delivered under its own terms; names and specifics are summarised where an NDA
-              applies. Nothing here is an offer of services beyond what is stated.
+              Every project here was delivered under its own terms. Where an NDA applies, names and specifics are
+              summarised. Nothing on this page is an offer of services beyond what it says.
             </p>
           </div>
 
           <div className="colophon">
             <p style={{ margin: "0 0 12px", lineHeight: 1.55 }}>
-              Aashir Noman &mdash; AI / ML Engineer, Karachi. Building LLM systems that ship.
+              Aashir Noman. AI / ML Engineer, based in Karachi, working remotely.
             </p>
             <p style={{ margin: "0 0 12px", lineHeight: 1.55, fontFamily: '"Courier Prime", monospace', fontSize: 13 }}>
               azac965@gmail.com

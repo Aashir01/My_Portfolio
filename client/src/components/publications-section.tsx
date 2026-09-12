@@ -13,11 +13,11 @@ export default function PublicationsSection() {
       <div className="wrap">
         <div className="sec-head">
           <h2>Credentials</h2>
-          <div className="label">Continuous study &middot; No expiry</div>
+          <div className="label">Six certificates &middot; IBM and Udemy</div>
         </div>
         <p className="lede">
-          The field moves fast; the fundamentals do not. These are the certificates, but the real record is the work
-          above &mdash; and the versions of these skills that have been tested in production since.
+          Certificates are the easy part. The real record is the section above, where these same skills have had to
+          survive contact with production and a client's deadline. Listed here for completeness.
         </p>
 
         <div
