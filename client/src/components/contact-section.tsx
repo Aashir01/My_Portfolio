@@ -37,17 +37,18 @@ export default function ContactSection() {
           <div className="label" style={{ color: "var(--stock)" }}>Open to remote AI/ML roles</div>
         </div>
         <p className="lede" style={{ color: "var(--stock)", opacity: 0.9 }}>
-          I am open to remote AI / ML engineering roles and long-term consulting engagements &mdash; especially where an
-          LLM system has to be trusted with something consequential: agent orchestration, retrieval over proprietary
-          corpora, guardrails and approval workflows, or evaluation infrastructure for a team shipping fast.
+          I'm open to remote AI / ML engineering roles and longer consulting work. The jobs I take on most happily are
+          the ones where the system has to be trusted with something that matters. Agents with real permissions,
+          retrieval over a company's own documents, approval workflows, or the evaluation setup a fast team never got
+          around to building.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7" style={{ marginBottom: 52 }}>
           {[
-            ["01 — Describe", "Send the problem in plain language. A dataset, a workflow, a bottleneck — no jargon needed."],
-            ["02 — Agree", "We settle scope, stack, and success criteria before any code is written."],
-            ["03 — Build", "A working system, deployed and documented, with the honest trade-offs written down."],
-            ["04 — Hand over", "You get the code, the model, and the record. Nothing is held back behind a retainer."],
+            ["01 \u00b7 Describe", "Send the problem in plain language. A dataset, a workflow, a bottleneck. No jargon needed."],
+            ["02 \u00b7 Agree", "We settle scope, stack and what counts as success before any code gets written."],
+            ["03 \u00b7 Build", "A working system, deployed and documented, with the trade-offs written down plainly."],
+            ["04 \u00b7 Hand over", "You keep the code, the model and the record. Nothing stays locked behind a retainer."],
           ].map(([step, body]) => (
             <div key={step} style={{ borderTop: "2px solid var(--vermilion)", paddingTop: 12 }}>
               <b style={{ display: "block", fontFamily: '"Courier Prime", monospace', fontSize: 12, letterSpacing: "0.14em", color: "var(--vermilion)", marginBottom: 6 }}>

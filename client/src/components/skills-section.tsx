@@ -2,49 +2,49 @@ const departments = [
   {
     code: "LLM 1XX",
     name: "LLMs & Fine-Tuning",
-    description: "Open-weight models, adapted to a task rather than prompt-begged into one.",
+    description: "Taking an open-weight model and training it for the job in front of it.",
     items: ["LoRA / QLoRA", "PEFT", "Supervised & instruction fine-tuning", "Dataset curation", "Quantization (GGUF)", "Evaluation harnesses"],
   },
   {
     code: "RAG 2XX",
     name: "RAG Systems",
-    description: "Retrieval that cites its sources and refuses instead of guessing.",
+    description: "Retrieval that shows where an answer came from, and admits when it has nothing.",
     items: ["Chunking strategies", "Embeddings", "Vector stores (pgvector, FAISS, Chroma)", "Hybrid search", "Reranking", "Grounded citation answers"],
   },
   {
     code: "AGT 3XX",
     name: "Agentic AI & Automation",
-    description: "Multi-agent orchestration with limits a model cannot talk its way past.",
+    description: "Getting several agents to cooperate inside limits they can't negotiate.",
     items: ["Multi-agent orchestration", "Tool / function calling", "MCP", "LangChain", "LangGraph", "CrewAI", "Workflow automation"],
   },
   {
     code: "SER 4XX",
     name: "Model Serving & Infrastructure",
-    description: "Getting a trained model off the notebook and onto a box that stays up.",
+    description: "Getting a trained model out of a notebook and onto a box that stays up.",
     items: ["Ollama", "vLLM", "Hugging Face Transformers", "FastAPI", "Docker", "GPU rental (RunPod, Vast.ai)", "Self-hosted inference"],
   },
   {
     code: "ML 5XX",
     name: "Machine & Deep Learning",
-    description: "The quiet math that makes a prediction worth trusting.",
+    description: "Classical models, still the right answer more often than people expect.",
     items: ["CNN", "KNN", "Time series clustering", "Supervised & unsupervised learning", "Gradient boosting", "Ensembling", "Model fine-tuning"],
   },
   {
     code: "DATA 6XX",
     name: "Data Engineering & Analysis",
-    description: "Moving, cleaning, and indexing data so downstream systems stay accurate.",
+    description: "Moving, cleaning and indexing data so everything downstream stays accurate.",
     items: ["Pandas", "NumPy", "PySpark", "SQL / PostgreSQL (Supabase)", "Web scraping", "EDA", "Matplotlib", "Tableau"],
   },
   {
     code: "PROG 7XX",
     name: "Programming",
-    description: "The core languages everything else is built on.",
+    description: "What all of the above is written in.",
     items: ["Python", "SQL"],
   },
   {
     code: "API 8XX",
     name: "APIs & Platforms",
-    description: "The model and service providers wired into production work.",
+    description: "Providers I've wired into production work, model and otherwise.",
     items: ["OpenAI", "Anthropic Claude", "DeepSeek", "Qwen", "Supabase", "Duffel", "Amadeus", "Mollie", "GoCardless", "Wise"],
   },
 ];
@@ -58,8 +58,9 @@ export default function SkillsSection() {
           <div className="label">Eight groups &middot; Skills that ship</div>
         </div>
         <p className="lede">
-          Grouped by layer. There is no prerequisite chain &mdash; pick any thread and follow it. The 100s are the
-          foundations; the 600s assume you have already asked the harder questions.
+          Grouped by layer and numbered like a course catalogue, though nothing here is a prerequisite for anything
+          else. Pick a thread and follow it. The 100s are foundations. The 600s assume the harder questions are
+          already settled.
         </p>
 
         <div

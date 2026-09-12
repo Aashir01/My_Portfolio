@@ -6,9 +6,9 @@ const flagships = [
     alt: "Container port with gantry cranes and an autonomous routing arc",
     title: "Autonomous Logistics Control Plane",
     description:
-      "Disruptions at ports, on vessels, and in inventory were being caught late and resolved by manual phone calls across suppliers, TMS, WMS, and ERP — a slow, error-prone chain. I built an agent mesh that watches all of them, detects a disruption, and executes the response itself against ERP/TMS/WMS — but only inside hard limits the model cannot talk its way past. Delays and stock-outs now get handled in minutes, not days, and anything out of bounds escalates instead of guessing.",
-    take: "Tiered autonomy, signed execution, CVaR₉₀ ranking.",
-    stack: "Python · Claude · FastAPI · Kafka · TimescaleDB · React",
+      "Port delays, vessel changes and stock-outs were getting spotted late, then sorted out over the phone between suppliers, the TMS, the WMS and the ERP. Meridian watches all four and acts on what it finds, writing back to those systems inside limits it can't argue its way around. Work that used to take two days of calls now clears in minutes, and anything outside the limits goes to a person instead.",
+    take: "Autonomy tiers, signed tool calls, CVaR\u2089\u2080 risk ranking",
+    stack: "Python \u00b7 Claude \u00b7 FastAPI \u00b7 Kafka \u00b7 TimescaleDB \u00b7 React",
     tests: "185 tests",
     href: "https://github.com/Aashir01/Supply-Chain-and-Logistics-Agentic-system",
   },
@@ -19,9 +19,9 @@ const flagships = [
     alt: "Passport and application documents checked against a compliance list",
     title: "Visa Document Intelligence",
     description:
-      "Visa applications were getting refused for avoidable errors — missing documents, name mismatches, insufficient funds, non-compliant photos — only discovered at the consulate after fees and time were already lost. I built a system that scans the whole application bundle and reports exactly what is wrong before it ever gets submitted. Rejections that used to cost weeks now get caught in a single deterministic pass — 2–3 LLM calls per bundle, so it is fast and cheap to run per check.",
-    take: "Deterministic-first, 2–3 LLM calls per bundle.",
-    stack: "FastAPI · Next.js · Claude / DeepSeek · Tesseract",
+      "Visa refusals usually come down to things nobody checked. A missing bank statement. A name spelled two ways across three forms. A photo that fails the crop rules. By the time the consulate says so, the fee is gone and the trip is off. VisaGuard reads the whole bundle and lists what's wrong while there's still time to fix it. Most of the checking is ordinary code, so a full pass costs two or three model calls.",
+    take: "Rule checks first, 2 to 3 model calls per bundle",
+    stack: "FastAPI \u00b7 Next.js \u00b7 Claude / DeepSeek \u00b7 Tesseract",
     tests: "224 tests",
     href: "https://github.com/Aashir01/Visa-Check",
   },
@@ -32,9 +32,9 @@ const flagships = [
     alt: "A denied insurance letter passing through three review gates into a signed appeal",
     title: "Medical Insurance Appeals Bot",
     description:
-      "Insurers keep denying legitimate claims with opaque letters, and patients — who rarely know the legal grounds — almost never fight back, so valid appeals fail. I built a system that reads each denial letter, drafts a legally grounded appeal, and routes every single one to a licensed human before it leaves the building. The AI writes the case; it never sends anything on its own — three independent liability gates keep a person responsible, so appeals go out grounded in regulation rather than guesswork.",
-    take: "Three independent liability gates.",
-    stack: "FastAPI · LangGraph · Claude · Postgres · Alembic",
+      "Insurers deny claims in letters most people can't parse, so plenty of valid appeals never get written at all. This reads the denial, works out which regulation it runs into, and drafts the appeal on that basis. Nothing leaves the system until a licensed human signs it. Three separate checks enforce that, because the cost of getting it wrong is somebody's medical bill.",
+    take: "Three liability gates before anything sends",
+    stack: "FastAPI \u00b7 LangGraph \u00b7 Claude \u00b7 Postgres \u00b7 Alembic",
     tests: "119 tests",
     href: "https://github.com/Aashir01/Medical-Insurance-Appeal-Bots",
   },
@@ -45,9 +45,9 @@ const flagships = [
     alt: "Manuscript page with a geometric star panel and exact verse citations",
     title: "Quran Research Agent",
     description:
-      "Generic search tools over an authoritative religious corpus return loosely-sourced or model-guessed answers — unacceptable where every citation has to be exact. I built deterministic retrieval and agentic research over a closed corpus of 6,236 ayat, 130k morphological segments, and 1,651 roots, where scripture is rendered from PostgreSQL, never generated. The result is answers that cite the actual text — no hallucinated verses, no fabricated references.",
-    take: "Exhaustive over probabilistic retrieval.",
-    stack: "FastAPI · PostgreSQL · Next.js PWA · LangGraph · MCP",
+      "A general search tool will happily invent a verse number. Tolerable in a blog post, useless here. Every ayah this returns is read straight out of PostgreSQL: 6,236 verses, 130k morphological segments and 1,651 roots, all indexed for exact lookup. The agent does the research around the text and cites the line it came from, so a claim can be checked in a second.",
+    take: "Scripture is queried, never generated",
+    stack: "FastAPI \u00b7 PostgreSQL \u00b7 Next.js PWA \u00b7 LangGraph \u00b7 MCP",
     tests: "89 tests",
     href: "https://github.com/Aashir01/Quran-Research-Agent",
   },
@@ -58,9 +58,9 @@ const flagships = [
     alt: "Terminal window showing an exact-match diff being applied",
     title: "A Coding Agent, Built to Be Read",
     description:
-      "Most coding agents apply an LLM's patch too loosely and silently corrupt the wrong region of code when the replacement drifts from the source. I built an agent where the edit-application ladder is the hard part: when the model's replacement does not match byte-for-byte, progressively looser passes retry — but each must find exactly one match. The outcome is edits that land where they were intended, and ambiguity is an error, never a guess.",
-    take: "Ambiguity is an error, never a guess.",
-    stack: "TypeScript · Node 22+ · Anthropic + OpenAI transports",
+      "Coding agents quietly wreck files when the model's patch no longer matches what is on disk and the tool applies it anyway. This one refuses. If the replacement isn't byte-identical it retries with looser matching, and every pass has to land on exactly one match or the edit stops and says why. Forty tests, no framework, small enough to read in an afternoon.",
+    take: "One match, or it stops and tells you",
+    stack: "TypeScript \u00b7 Node 22+ \u00b7 Anthropic + OpenAI transports",
     tests: "40 tests",
     href: "https://github.com/Aashir01/agent-cli",
   },
@@ -71,23 +71,23 @@ const flagships = [
     alt: "Candlestick chart filtered by a macroeconomic evidence curve",
     title: "Macro-Informed Financial Intelligence Engine",
     description:
-      "Chart patterns in isolation fire false signals, so traders act on setups the macro picture quietly contradicts — a reliable way to lose money. I built an engine that treats a chart pattern as a hypothesis and the macroeconomy as the evidence: a setup becomes a signal only after surviving a chain of econometric filters that correct for overlapping observations. The result is far fewer false setups and signals only when the macro evidence actually corroborates.",
-    take: "Corrects for overlapping observations.",
-    stack: "Python · pandas/numpy · SQLAlchemy · TimescaleDB · Streamlit",
+      "A chart pattern on its own tells you very little, which is how traders end up long into a tightening cycle. MFIE treats the pattern as a guess and tests it against macro data before it will call anything a signal, with the significance maths corrected for overlapping windows so the backtest stops flattering itself. Far fewer setups survive the filter. That's the point of it.",
+    take: "Overlap-corrected significance testing",
+    stack: "Python \u00b7 pandas/numpy \u00b7 SQLAlchemy \u00b7 TimescaleDB \u00b7 Streamlit",
     tests: "163 tests",
     href: "https://github.com/Aashir01/Trading-Analyst",
   },
 ];
 
 const moreWork = [
-  { title: "DataSense AI", what: "Stops non-analysts from mis-querying data — SaaS agent with a whitelisted query planner that only allows safe SQL", href: "https://github.com/Aashir01/AI-Data-Analyst-Agent" },
-  { title: "Enterprise AI Knowledge Assistant", what: "Fixes slow, siloed document search — production RAG assistant returning grounded answers over enterprise docs", href: "https://github.com/Aashir01/Enterprise-AI-Knowledge-Assistant" },
-  { title: "El Madina Viajes", what: "Removes pricing inconsistencies across a booking site — tour platform with one shared, source-of-truth pricing engine", href: "https://github.com/Aashir01/EL-MADINA-VIAJES" },
-  { title: "Hierarchical Agent Swarm", what: "Solves coordination breaking down at scale — manager–worker tree running 100+ agents without collisions", href: "https://github.com/Aashir01/hierarchical-agent-swarm" },
-  { title: "Nexus Motion", what: "Cuts the manual pipeline in video production — multi-agent pipeline handling it end to end", href: "https://github.com/Aashir01/nexus-motion-AI-video-agency" },
-  { title: "Spain Appointment Bot", what: "Kills the dead-time of watching a portal — appointment tracking and instant notification automation", href: "https://github.com/Aashir01/spain-visa-appointment-bot" },
-  { title: "March ML Mania 2026", what: "Tames noisy brackets with calibrated, ensembled predictions — Kaggle tournament model", href: "https://github.com/Aashir01/-March-Machine-Learning-Mania-2026" },
-  { title: "Deep Learning Projects", what: "Applied DL notebooks and experiments — working demos, not toy tutorials", href: "https://github.com/Aashir01/Deep-Learning-Projects" },
+  { title: "DataSense AI", what: "Lets non-analysts ask a database questions without writing SQL. A query planner decides what is safe to run.", href: "https://github.com/Aashir01/AI-Data-Analyst-Agent" },
+  { title: "Enterprise AI Knowledge Assistant", what: "RAG assistant over internal documents. Answers arrive with the source attached, so people stop chasing each other for PDFs.", href: "https://github.com/Aashir01/Enterprise-AI-Knowledge-Assistant" },
+  { title: "El Madina Viajes", what: "Tour booking site where one pricing engine is the only place a price can come from. Three pages used to disagree.", href: "https://github.com/Aashir01/EL-MADINA-VIAJES" },
+  { title: "Hierarchical Agent Swarm", what: "A manager and worker tree that keeps 100+ agents from colliding with each other's work.", href: "https://github.com/Aashir01/hierarchical-agent-swarm" },
+  { title: "Nexus Motion", what: "Video production pipeline handled by a set of agents, from brief through to finished cut.", href: "https://github.com/Aashir01/nexus-motion-AI-video-agency" },
+  { title: "Spain Appointment Bot", what: "Watches the consulate portal so nobody has to sit refreshing it, and pings the moment a slot opens.", href: "https://github.com/Aashir01/spain-visa-appointment-bot" },
+  { title: "March ML Mania 2026", what: "Kaggle bracket model, calibrated and ensembled, because tournament data punishes a confident guess.", href: "https://github.com/Aashir01/-March-Machine-Learning-Mania-2026" },
+  { title: "Deep Learning Projects", what: "Notebooks and experiments from things I was working through at the time. They all run.", href: "https://github.com/Aashir01/Deep-Learning-Projects" },
 ];
 
 function GitHubMark({ size = 14 }: { size?: number }) {
@@ -109,10 +109,9 @@ export default function ProjectsSection() {
           <div className="label">Six flagship builds &middot; 820 tests</div>
         </div>
         <p className="lede">
-          Each build below exists because a real problem kept costing someone time, money, or trust. I went after the
-          problem first, shipped the system that removes it, and left the outcome written down — 820 tests between six
-          flagship systems, polished guardrails, and engines, not notebooks. Five of the six run end-to-end with no API
-          key, on deterministic or synthetic fallbacks. Every card opens the source on GitHub.
+          Six systems, each one built because something specific was going wrong and somebody was paying for it.
+          There are 820 tests across them. Five of the six boot and run with no API key at all, on deterministic or
+          fake providers, so you can try one before spending a cent on tokens. Every card links to its repo.
         </p>
 
         <div

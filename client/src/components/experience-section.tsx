@@ -1,36 +1,36 @@
 const roles = [
   {
-    period: "2024 — Present",
+    period: "Since 2024",
     company: "Madina Travels",
     location: "Rawalpindi & Barcelona",
     title: "AI/ML Engineer & Founder",
     points: [
-      "Solved the fragmented booking problem for flight and Umrah travel — built SkyNest on Supabase/PostgreSQL with a mock-first strategy, integrating Duffel and Amadeus flight APIs and EU payment rails (Mollie, GoCardless, Wise Business) so bookings and payouts work across markets without a modern payment stack fight.",
-      "Removed the drag of hand-written, drifting code by authoring a production-grade AI coding agent specification that drives feature development, schema migrations, and QA across the codebase — features ship in step, not out of sync.",
-      "Cut manual visa and Umrah case review time sharply by building LLM-powered extraction, validation, and checklist generation — the paperwork is pre-checked before a human touches it.",
-      "Broke the deadlock of a legacy Galileo GDS with no modern API by prototyping Python middleware and RPA to reach it — the old system talks to the new stack.",
+      "Built SkyNest, a booking platform for flights and Umrah packages, on Supabase and PostgreSQL. Duffel and Amadeus supply the flight inventory, Mollie, GoCardless and Wise Business move the money, and the whole thing runs mock-first so development never waits on a provider account.",
+      "Wrote the specification for an in-house AI coding agent that now carries feature work, schema migrations and QA. It keeps the codebase from drifting in four directions at once, which is what was happening before.",
+      "Cut the time spent reviewing visa and Umrah cases by pre-checking the paperwork with LLM extraction and validation. A person still signs off, but on a file that has already been read properly.",
+      "Got a legacy Galileo GDS talking to the new stack using Python middleware and some RPA, since it has no API worth the name.",
     ],
   },
   {
-    period: "2023 — Present",
+    period: "Since 2023",
     company: "Upwork",
     location: "Remote",
-    title: "Freelance AI/ML Engineer — Top Rated",
+    title: "Freelance AI/ML Engineer (Top Rated)",
     points: [
-      "Solved the 'answers with no receipts' problem over private datasets — built RAG and document intelligence systems that ingest large PDF corpora, index them into vector stores, and return grounded, cited answers instead of confident guesses.",
-      "Won measurable accuracy gains where off-the-shelf models underperformed client data — fine-tuned deep learning models with data-efficient training loops and rigorous evaluation.",
-      "Automated downstream workflows that were drowning in manual output — delivered chatbot and OpenAI ChatCompletion integrations, prompt pipelines, and structured-output tooling.",
-      "Applied ML and data engineering to specific, messy real-world problems: time series clustering, speech recognition for industry jargon, custom JPEG compression, octave-convolution CNNs, a Tableau Prep to PySpark migration, and large-scale data cleaning and visualization.",
-      "Kept the work coming by solving clients' problems well — maintained five-star ratings and repeat engagements across a broad portfolio.",
+      "Built RAG and document intelligence systems over private data. Large PDF corpora ingested, indexed into vector stores, and answers returned with the citation attached so anyone can check them.",
+      "Fine-tuned deep learning models for clients whose data the off-the-shelf versions handled badly, with the evaluation work to show the gain was real.",
+      "Delivered chatbots, ChatCompletion integrations, prompt pipelines and structured-output tooling for teams that were drowning in manual work.",
+      "Took on the awkward jobs: time series clustering, speech recognition for trade jargon, a custom JPEG compressor, octave-convolution CNNs, a Tableau Prep to PySpark migration, and a great deal of data cleaning.",
+      "Held a five-star rating throughout, and most of the work came from clients who had hired me before.",
     ],
   },
   {
-    period: "2023 — 2024",
+    period: "2023 to 2024",
     company: "Omdena",
     location: "Remote",
     title: "Collaborator",
     points: [
-      "Helped toward early identification of autism indicators in toddlers where timely screening is scarce — contributed modelling and evaluation to the Sri Lankan Autism Prediction Project for an applied AI system.",
+      "Contributed modelling and evaluation to the Sri Lankan Autism Prediction Project, aimed at catching indicators in toddlers early in a setting where screening is hard to come by.",
     ],
   },
 ];
@@ -44,8 +44,8 @@ export default function ExperienceSection() {
           <div className="label">Where the work happened</div>
         </div>
         <p className="lede">
-          Three years of being handed a slow, broken, or impossible thing and handing back a system that works — for
-          clients across travel, document intelligence, and applied machine learning.
+          Three years of being handed something slow or broken and sending back something that works. Travel,
+          document intelligence and applied machine learning, mostly.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
@@ -67,7 +67,7 @@ export default function ExperienceSection() {
                 <ul style={{ margin: 0, paddingLeft: 0, listStyle: "none" }}>
                   {role.points.map((point) => (
                     <li key={point} style={{ paddingLeft: 18, position: "relative", marginBottom: 10, fontSize: 16.5, lineHeight: 1.5 }}>
-                      <span style={{ position: "absolute", left: 0, opacity: 0.5 }}>&mdash;</span>
+                      <span style={{ position: "absolute", left: 0, opacity: 0.55, fontSize: 12, top: 5 }}>&#9642;</span>
                       {point}
                     </li>
                   ))}
